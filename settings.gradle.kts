@@ -1,6 +1,40 @@
 rootProject.name = "Soto"
 
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("""^com\.android(\..*)?$""")
+                includeGroupByRegex("""^com\.google\..*$""")
+                includeGroupByRegex("""^androidx\..*$""")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal {
+            content {
+                includeGroup("com.gradle")
+                includeGroup("com.gradle.enterprise")
+            }
+        }
+    }
+}
+
 plugins {
     // Automatically configures toolchain management
-    id("org.gradle.toolchains.foojay-resolver-convention") version("0.8.0")
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
+
+@Suppress("UnstableApiUsage")
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("""^com\.android(\..*)?$""")
+                includeGroupByRegex("""^com\.google\..*$""")
+                includeGroupByRegex("""^androidx\..*$""")
+            }
+        }
+        mavenCentral()
+    }
 }
