@@ -1,7 +1,16 @@
 [versions]
+java = "21"
+kotlin = "2.0.0-Beta3"
 
 [libraries]
 
-[plugins]
+# buildSrc dependencies
+buildSrc-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
+buildSrc = [
+    "buildSrc-kotlin",
+]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
