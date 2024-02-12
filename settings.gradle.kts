@@ -1,5 +1,7 @@
 rootProject.name = "Soto"
 
+include(":app")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
