@@ -2,9 +2,12 @@ rootProject.name = "Soto"
 
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        gradlePluginPortal()
+
+        // TODEL Kotlin 2.0
+        maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
     }
 }
 
@@ -19,5 +22,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+        // TODEL Kotlin 2.0
+        maven(url = "https://androidx.dev/storage/compose-compiler/repository/")
+        maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
     }
 }
