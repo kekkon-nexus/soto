@@ -2,9 +2,12 @@
 # Plugins
 java = "21"
 kotlin = "2.0.0-Beta3"
+ksp = "2.0.0-Beta3-1.0.17"
 
 android = "8.4.0-alpha09"
 compose-compiler = "1.5.9-dev-k2.0.0-Beta3-7c5ec6895a0"
+
+dagger = "2.50"
 
 # Libraries
 androidx-core = "1.12.0"
@@ -15,6 +18,8 @@ androidx-test-ext-junit = "1.1.5"
 androidx-compose-bom = "2024.02.00"
 androidx-activity-compose = "1.8.2"
 
+coil = "2.5.0"
+
 [libraries]
 # Android
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
@@ -22,6 +27,10 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 # Android test
 androidx-test-ext-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidx-test-ext-junit" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+# Dagger
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger" }
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose-bom" }
@@ -34,14 +43,21 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 # Compose integrations
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
 
+# Compose extensions
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
 # buildSrc dependencies
 buildSrc-android = { group = "com.android.tools.build", name = "gradle", version.ref = "android" }
+buildSrc-hilt-android = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "dagger" }
 buildSrc-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+buildSrc-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 [bundles]
 buildSrc = [
     "buildSrc-android",
+    "buildSrc-hilt-android",
     "buildSrc-kotlin",
+    "buildSrc-ksp",
 ]
 
 [plugins]
@@ -50,3 +66,6 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
+
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
