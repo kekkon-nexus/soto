@@ -94,6 +94,7 @@ fun SotoBottomBar(
                         contentDescription = null,
                     )
                 },
+                label = { Text(stringResource(destination.textId)) },
             )
         }
     }
