@@ -22,6 +22,10 @@ include(
     ":core:ui",
 )
 
+include(
+    ":feature:library",
+)
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

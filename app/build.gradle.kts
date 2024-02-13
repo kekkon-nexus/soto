@@ -16,8 +16,6 @@
 
 plugins {
     id.synth.soto.convention.presets.app
-    id.synth.soto.convention.hilt.android
-    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
 }
 
 android {
