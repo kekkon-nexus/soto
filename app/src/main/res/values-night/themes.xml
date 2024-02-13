@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2024 Soto contributors
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +14,8 @@
   ~ limitations under the License.
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!--
-        Allows us to override night specific attributes in the values-night folder.
-    -->
-    <style name="NightAdjusted.Theme.Soto" parent="android:Theme.Material.Light.NoActionBar" />
-
-    <!-- The final theme we use -->
-    <style name="Theme.Soto" parent="NightAdjusted.Theme.Soto" />
+    <style name="NightAdjusted.Theme.Soto" parent="android:Theme.Material.NoActionBar" />
 
 </resources>
