@@ -52,4 +52,7 @@ dependencies {
 
     // Compose
     implementation(libs.androidx.activity.compose)
+
+    // Projects
+    implementation(projects.core.ui)
 }

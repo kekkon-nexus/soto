@@ -18,6 +18,12 @@ rootProject.name = "Soto"
 
 include(":app")
 
+include(
+    ":core:ui",
+)
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
