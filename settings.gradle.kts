@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-rootProject.name = "Soto"
+rootProject.name = "soto"
 
 include(":app")
 

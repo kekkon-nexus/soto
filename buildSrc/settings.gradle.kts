@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+rootProject.name = "soto-convention"
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
