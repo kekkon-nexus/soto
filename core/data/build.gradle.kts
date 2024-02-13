@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+plugins {
+    id.synth.soto.convention.android.library
+    id.synth.soto.convention.hilt.android
+}
 
-import org.gradle.api.Project
+dependencies {
+    implementation(libs.kotlinx.coroutines.android)
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
-
-        return "id.synth.$`package`$subpackage"
-    }
+    // Project
+    implementation(projects.core.datastore)
+    implementation(projects.core.model)
+}

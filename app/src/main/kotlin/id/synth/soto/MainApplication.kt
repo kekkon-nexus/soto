@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package id.synth.soto
 
-import org.gradle.api.Project
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
-
-        return "id.synth.$`package`$subpackage"
-    }
+/**
+ * [Application] class for Soto
+ */
+@HiltAndroidApp
+class MainApplication : Application()

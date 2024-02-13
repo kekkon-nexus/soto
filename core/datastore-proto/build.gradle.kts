@@ -14,18 +14,31 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+plugins {
+    id.synth.soto.convention.android.library
 
-import org.gradle.api.Project
+    alias(libs.plugins.protobuf)
+}
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
-
-        return "id.synth.$`package`$subpackage"
+// Setup protobuf configuration, generating lite Java and Kotlin classes
+protobuf {
+    protoc {
+        artifact = libs.protobuf.protoc.get().toString()
     }
+    generateProtoTasks {
+        all().forEach { task ->
+            task.builtins {
+                register("java") {
+                    option("lite")
+                }
+                register("kotlin") {
+                    option("lite")
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    api(libs.protobuf.kotlin.lite)
+}

@@ -19,6 +19,10 @@ rootProject.name = "soto"
 include(":app")
 
 include(
+    ":core:data",
+    ":core:datastore",
+    ":core:datastore-proto",
+    ":core:model",
     ":core:ui",
 )
 

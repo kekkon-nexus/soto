@@ -14,18 +14,9 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package id.synth.soto.model.data
 
-import org.gradle.api.Project
-
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
-
-        return "id.synth.$`package`$subpackage"
-    }
+data class UserData(
+    val darkThemeConfig: DarkThemeConfig,
+    val useDynamicColor: Boolean,
+)

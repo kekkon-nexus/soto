@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+syntax = "proto3";
 
-import org.gradle.api.Project
+import "id/synth/soto/core/datastore/dark_theme_config.proto";
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
+option java_package = "id.synth.soto.core.datastore";
+option java_multiple_files = true;
 
-        return "id.synth.$`package`$subpackage"
-    }
+message UserDataProto {
+  DarkThemeConfigProto dark_theme_config = 1;
+  bool disable_dynamic_color = 2;
+
+  // NEXT AVAILABLE ID: 3
+}

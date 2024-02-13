@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+plugins {
+    id.synth.soto.convention.android.library
+    id.synth.soto.convention.hilt.android
+}
 
-import org.gradle.api.Project
-
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
-
-        return "id.synth.$`package`$subpackage"
+android {
+    defaultConfig {
+        consumerProguardFiles("consumer-proguard-rules.pro")
     }
+}
+
+dependencies {
+    api(libs.androidx.datastore)
+    api(projects.core.datastoreProto)
+    api(projects.core.model)
+}

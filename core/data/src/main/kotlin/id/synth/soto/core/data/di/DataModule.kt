@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package id.synth.soto.core.data.di
 
-import org.gradle.api.Project
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import id.synth.soto.core.data.repository.OfflineFirstUserDataRepository
+import id.synth.soto.core.data.repository.UserDataRepository
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class DataModule {
 
-        return "id.synth.$`package`$subpackage"
-    }
+    @Binds
+    internal abstract fun bindsUserDataRepository(
+        userDataRepository: OfflineFirstUserDataRepository,
+    ): UserDataRepository
+}

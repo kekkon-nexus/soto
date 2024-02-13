@@ -14,18 +14,25 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package id.synth.soto.core.data.repository
 
-import org.gradle.api.Project
+import id.synth.soto.model.data.DarkThemeConfig
+import id.synth.soto.model.data.UserData
+import kotlinx.coroutines.flow.Flow
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
+interface UserDataRepository {
+    /**
+     * Stream of [UserData].
+     */
+    val userData: Flow<UserData>
 
-        return "id.synth.$`package`$subpackage"
-    }
+    /**
+     * Sets the desired dark theme config.
+     */
+    suspend fun setDarkThemeConfig(darkThemeConfig: DarkThemeConfig)
+
+    /**
+     * Sets the preferred dynamic color config.
+     */
+    suspend fun setDynamicColorPreference(useDynamicColor: Boolean)
+}
