@@ -15,8 +15,8 @@
  */
 
 plugins {
-    id("id.synth.soto.convention.presets.app")
-    id("id.synth.soto.convention.dependencies.androidx.compose.ui.tooling")
+    id.synth.soto.convention.presets.app
+    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
 }
 
 android {
