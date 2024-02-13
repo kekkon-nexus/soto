@@ -51,7 +51,10 @@ dependencies {
 
     // Compose
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
 
     // Projects
     implementation(projects.core.ui)
+
+    implementation(projects.feature.library)
 }

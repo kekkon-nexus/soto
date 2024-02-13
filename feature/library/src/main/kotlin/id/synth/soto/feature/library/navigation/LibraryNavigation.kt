@@ -14,13 +14,25 @@
  * limitations under the License.
  */
 
-plugins {
-    id.synth.soto.convention.android.library
-    id.synth.soto.convention.androidx.compose
-    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
+package id.synth.soto.feature.library.navigation
+
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
+import androidx.navigation.compose.composable
+import id.synth.soto.feature.library.LibraryScreen
+
+const val ROUTE_LIBRARY = "soto/library"
+
+fun NavController.navigateToLibrary(navOptions: NavOptions? = null) {
+    this.navigate(
+        ROUTE_LIBRARY,
+        navOptions
+    )
 }
 
-dependencies {
-    // Compose integrations
-    api(libs.androidx.compose.material.icons.extended)
+fun NavGraphBuilder.libraryScreen() {
+    composable(ROUTE_LIBRARY) {
+        LibraryScreen()
+    }
 }

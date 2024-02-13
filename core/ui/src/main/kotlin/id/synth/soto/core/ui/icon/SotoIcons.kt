@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-plugins {
-    id.synth.soto.convention.android.library
-    id.synth.soto.convention.androidx.compose
-    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
-}
+package id.synth.soto.core.ui.icon
 
-dependencies {
-    // Compose integrations
-    api(libs.androidx.compose.material.icons.extended)
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.LocalLibrary
+import androidx.compose.material.icons.rounded.LocalLibrary
+import androidx.compose.ui.graphics.vector.ImageVector
+
+/**
+ * Soto icons. Material icons are [ImageVector]s.
+ */
+object SotoIcons {
+    val Library = Icons.Outlined.LocalLibrary
+    val LibraryFilled = Icons.Rounded.LocalLibrary
 }

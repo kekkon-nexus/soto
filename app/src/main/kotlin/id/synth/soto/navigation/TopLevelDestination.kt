@@ -14,13 +14,22 @@
  * limitations under the License.
  */
 
-plugins {
-    id.synth.soto.convention.android.library
-    id.synth.soto.convention.androidx.compose
-    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
-}
+package id.synth.soto.navigation
 
-dependencies {
-    // Compose integrations
-    api(libs.androidx.compose.material.icons.extended)
+import androidx.annotation.StringRes
+import androidx.compose.ui.graphics.vector.ImageVector
+import id.synth.soto.core.ui.icon.SotoIcons
+import id.synth.soto.feature.library.R as libraryR
+
+enum class TopLevelDestination(
+    val iconUnselected: ImageVector,
+    val iconSelected: ImageVector,
+    @StringRes
+    val textId: Int,
+) {
+    LIBRARY(
+        iconUnselected = SotoIcons.Library,
+        iconSelected = SotoIcons.LibraryFilled,
+        textId = libraryR.string.library,
+    )
 }

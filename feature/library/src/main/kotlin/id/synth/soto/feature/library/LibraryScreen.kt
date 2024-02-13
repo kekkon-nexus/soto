@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-plugins {
-    id.synth.soto.convention.android.library
-    id.synth.soto.convention.androidx.compose
-    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
-}
+package id.synth.soto.feature.library
 
-dependencies {
-    // Compose integrations
-    api(libs.androidx.compose.material.icons.extended)
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+
+@Composable
+fun LibraryScreen() {
+    Text(
+        text = stringResource(id = R.string.library)
+    )
 }
