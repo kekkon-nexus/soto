@@ -28,6 +28,7 @@ include(
 
 include(
     ":feature:library",
+    ":feature:settings",
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

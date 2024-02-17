@@ -60,4 +60,5 @@ dependencies {
     implementation(projects.core.ui)
 
     implementation(projects.feature.library)
+    implementation(projects.feature.settings)
 }
