@@ -4,7 +4,7 @@ java = "21"
 kotlin = "2.0.0-Beta3"
 ksp = "2.0.0-Beta3-1.0.17"
 
-android = "8.4.0-alpha09"
+android = "8.4.0-alpha10"
 compose-compiler = "1.5.9-dev-k2.0.0-Beta3-7c5ec6895a0"
 
 dagger = "2.50"
