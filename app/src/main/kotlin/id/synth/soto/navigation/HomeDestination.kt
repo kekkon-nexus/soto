@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import id.synth.soto.core.ui.icon.SotoIcons
 import id.synth.soto.feature.home.library.R as libraryR
 
-enum class TopLevelDestination(
+enum class HomeDestination(
     val iconUnselected: ImageVector,
     val iconSelected: ImageVector,
     @StringRes

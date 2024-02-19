@@ -35,7 +35,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import id.synth.soto.R
 import id.synth.soto.navigation.SotoNavHost
-import id.synth.soto.navigation.TopLevelDestination
+import id.synth.soto.navigation.HomeDestination
 
 @Composable
 fun SotoApp(
@@ -45,7 +45,7 @@ fun SotoApp(
         topBar = { SotoTopBar() },
         bottomBar = {
             SotoBottomBar(
-                destination = TopLevelDestination.entries.toList(),
+                destinations = HomeDestination.entries,
                 onNavigateTo = appState::navigateTo,
                 currentDestination = appState.currentDestination,
             )
@@ -73,13 +73,13 @@ fun SotoTopBar() {
 
 @Composable
 fun SotoBottomBar(
-    destination: List<TopLevelDestination>,
-    onNavigateTo: (TopLevelDestination) -> Unit,
+    destinations: List<HomeDestination>,
+    onNavigateTo: (HomeDestination) -> Unit,
     currentDestination: NavDestination?,
     modifier: Modifier = Modifier
 ) {
     NavigationBar(modifier = modifier) {
-        destination.forEach { destination ->
+        destinations.forEach { destination ->
             val selected = currentDestination.isInHierarchy(destination)
             NavigationBarItem(
                 selected = selected,
@@ -100,7 +100,7 @@ fun SotoBottomBar(
     }
 }
 
-private fun NavDestination?.isInHierarchy(destination: TopLevelDestination): Boolean =
+private fun NavDestination?.isInHierarchy(destination: HomeDestination): Boolean =
     this?.hierarchy?.any {
         it.route?.contains(destination.name, true) ?: false
     } ?: false
