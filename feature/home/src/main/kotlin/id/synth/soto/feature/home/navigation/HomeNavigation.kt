@@ -14,25 +14,26 @@
  * limitations under the License.
  */
 
-package id.synth.soto.feature.home.library.navigation
+package id.synth.soto.feature.home.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
-import androidx.navigation.compose.composable
-import id.synth.soto.feature.home.library.LibraryScreen
+import androidx.navigation.navigation
+import id.synth.soto.feature.home.library.navigation.ROUTE_LIBRARY
+import id.synth.soto.feature.home.library.navigation.libraryScreen
 
-const val ROUTE_LIBRARY = "library"
+const val ROUTE_HOME = "home"
 
-fun NavController.navigateToLibrary(navOptions: NavOptions? = null) {
+fun NavController.navigateToHome(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_LIBRARY,
+        ROUTE_HOME,
         navOptions
     )
 }
 
-fun NavGraphBuilder.libraryScreen() {
-    composable(ROUTE_LIBRARY) {
-        LibraryScreen()
+fun NavGraphBuilder.homeScreen() {
+    navigation(startDestination = ROUTE_LIBRARY, route = ROUTE_HOME) {
+        libraryScreen()
     }
 }
