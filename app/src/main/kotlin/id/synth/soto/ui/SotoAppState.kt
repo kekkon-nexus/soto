@@ -26,7 +26,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import id.synth.soto.feature.library.navigation.navigateToLibrary
+import id.synth.soto.feature.home.library.navigation.navigateToLibrary
 import id.synth.soto.navigation.TopLevelDestination
 import id.synth.soto.navigation.TopLevelDestination.*
 

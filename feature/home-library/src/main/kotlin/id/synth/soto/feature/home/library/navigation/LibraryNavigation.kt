@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package id.synth.soto.feature.library.navigation
+package id.synth.soto.feature.home.library.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import id.synth.soto.feature.library.LibraryScreen
+import id.synth.soto.feature.home.library.LibraryScreen
 
 const val ROUTE_LIBRARY = "soto/library"
 

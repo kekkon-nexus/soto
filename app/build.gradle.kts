@@ -59,6 +59,6 @@ dependencies {
     implementation(projects.core.model)
     implementation(projects.core.ui)
 
-    implementation(projects.feature.library)
+    implementation(projects.feature.homeLibrary)
     implementation(projects.feature.settings)
 }

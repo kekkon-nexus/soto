@@ -19,8 +19,8 @@ package id.synth.soto.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
-import id.synth.soto.feature.library.navigation.ROUTE_LIBRARY
-import id.synth.soto.feature.library.navigation.libraryScreen
+import id.synth.soto.feature.home.library.navigation.ROUTE_LIBRARY
+import id.synth.soto.feature.home.library.navigation.libraryScreen
 import id.synth.soto.ui.SotoAppState
 
 @Composable

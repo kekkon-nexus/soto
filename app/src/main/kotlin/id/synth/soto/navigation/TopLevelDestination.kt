@@ -19,7 +19,7 @@ package id.synth.soto.navigation
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import id.synth.soto.core.ui.icon.SotoIcons
-import id.synth.soto.feature.library.R as libraryR
+import id.synth.soto.feature.home.library.R as libraryR
 
 enum class TopLevelDestination(
     val iconUnselected: ImageVector,

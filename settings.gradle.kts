@@ -27,7 +27,7 @@ include(
 )
 
 include(
-    ":feature:library",
+    ":feature:home-library",
     ":feature:settings",
 )
 

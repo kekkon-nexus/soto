@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package id.synth.soto.feature.library
+package id.synth.soto.feature.home.library
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
