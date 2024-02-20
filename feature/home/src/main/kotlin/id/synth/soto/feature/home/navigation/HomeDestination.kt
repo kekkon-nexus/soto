@@ -14,8 +14,22 @@
  * limitations under the License.
  */
 
-package id.synth.soto.navigation
+package id.synth.soto.feature.home.navigation
 
-enum class TopLevelDestination {
-    HOME,
+import androidx.annotation.StringRes
+import androidx.compose.ui.graphics.vector.ImageVector
+import id.synth.soto.core.ui.icon.SotoIcons
+import id.synth.soto.feature.home.library.R as libraryR
+
+enum class HomeDestination(
+    val iconUnselected: ImageVector,
+    val iconSelected: ImageVector,
+    @StringRes
+    val textId: Int,
+) {
+    LIBRARY(
+        iconUnselected = SotoIcons.Library,
+        iconSelected = SotoIcons.LibraryFilled,
+        textId = libraryR.string.library,
+    )
 }

@@ -26,9 +26,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import id.synth.soto.feature.library.navigation.navigateToLibrary
+import id.synth.soto.feature.home.navigation.HomeDestination
+import id.synth.soto.feature.home.navigation.HomeDestination.*
+import id.synth.soto.feature.home.navigation.navigateToHome
 import id.synth.soto.navigation.TopLevelDestination
-import id.synth.soto.navigation.TopLevelDestination.*
 
 @Composable
 fun rememberSotoAppState(
@@ -48,8 +49,8 @@ class SotoAppState(
     val currentDestination: NavDestination?
         @Composable get() = navController.currentBackStackEntryAsState().value?.destination
 
-    fun navigateTo(topLevelDestination: TopLevelDestination) {
-        trace("Navigation: ${topLevelDestination.name}") {
+    fun navigateToHome(destination: HomeDestination) {
+        trace(destination.toString()) {
             val navOptions = navOptions {
                 // Pop up to the start destination of the graph to
                 // avoid building up a large stack of destinations
@@ -64,9 +65,7 @@ class SotoAppState(
                 restoreState = true
             }
 
-            when (topLevelDestination) {
-                LIBRARY -> navController.navigateToLibrary(navOptions)
-            }
+            navController.navigateToHome(destination, navOptions)
         }
     }
 }

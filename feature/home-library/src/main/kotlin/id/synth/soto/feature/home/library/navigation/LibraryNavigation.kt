@@ -14,8 +14,25 @@
  * limitations under the License.
  */
 
-package id.synth.soto.navigation
+package id.synth.soto.feature.home.library.navigation
 
-enum class TopLevelDestination {
-    HOME,
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
+import androidx.navigation.compose.composable
+import id.synth.soto.feature.home.library.LibraryScreen
+
+const val ROUTE_LIBRARY = "library"
+
+fun NavController.navigateToLibrary(navOptions: NavOptions? = null) {
+    this.navigate(
+        ROUTE_LIBRARY,
+        navOptions
+    )
+}
+
+fun NavGraphBuilder.libraryScreen() {
+    composable(ROUTE_LIBRARY) {
+        LibraryScreen()
+    }
 }
