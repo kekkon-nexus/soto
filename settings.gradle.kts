@@ -29,6 +29,7 @@ include(
 include(
     ":feature:home",
     ":feature:home-library",
+    ":feature:home-recent",
     ":feature:settings",
 )
 
