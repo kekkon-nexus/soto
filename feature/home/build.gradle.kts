@@ -25,6 +25,8 @@ android {
         // Projects
         implementation(projects.core.ui)
 
+        implementation(projects.feature.homeBrowse)
         implementation(projects.feature.homeLibrary)
+        implementation(projects.feature.homeRecent)
     }
 }

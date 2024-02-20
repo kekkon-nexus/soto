@@ -17,14 +17,22 @@
 package id.synth.soto.core.ui.icon
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BrowseGallery
+import androidx.compose.material.icons.filled.LibraryAdd
+import androidx.compose.material.icons.filled.LocalLibrary
+import androidx.compose.material.icons.outlined.BrowseGallery
+import androidx.compose.material.icons.outlined.LibraryAdd
 import androidx.compose.material.icons.outlined.LocalLibrary
-import androidx.compose.material.icons.rounded.LocalLibrary
 import androidx.compose.ui.graphics.vector.ImageVector
 
 /**
  * Soto icons. Material icons are [ImageVector]s.
  */
 object SotoIcons {
+    val Browse = Icons.Outlined.LibraryAdd
+    val BrowseFilled = Icons.Filled.LibraryAdd
     val Library = Icons.Outlined.LocalLibrary
     val LibraryFilled = Icons.Filled.LocalLibrary
+    val Recent = Icons.Outlined.BrowseGallery
+    val RecentFilled = Icons.Filled.BrowseGallery
 }

@@ -46,7 +46,7 @@ fun HomeScaffold(
         topBar = { HomeTopBar(appName = appName) },
         bottomBar = {
             HomeBottomBar(
-                destinations = id.synth.soto.feature.home.navigation.HomeDestination.entries,
+                destinations = HomeDestination.entries,
                 onNavigateTo = onNavigateTo,
                 currentDestination = currentDestination,
             )

@@ -20,20 +20,28 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.navigation
+import id.synth.soto.feature.home.browse.navigation.browseScreen
+import id.synth.soto.feature.home.browse.navigation.navigateToBrowse
 import id.synth.soto.feature.home.library.navigation.ROUTE_LIBRARY
 import id.synth.soto.feature.home.library.navigation.libraryScreen
 import id.synth.soto.feature.home.library.navigation.navigateToLibrary
+import id.synth.soto.feature.home.recent.navigation.navigateToRecent
+import id.synth.soto.feature.home.recent.navigation.recentScreen
 
 const val ROUTE_HOME = "home"
 
 fun NavController.navigateToHome(destination: HomeDestination, navOptions: NavOptions? = null) {
     when (destination) {
         HomeDestination.LIBRARY -> navigateToLibrary(navOptions)
+        HomeDestination.RECENT -> navigateToRecent(navOptions)
+        HomeDestination.BROWSE -> navigateToBrowse(navOptions)
     }
 }
 
 fun NavGraphBuilder.homeNavigation() {
     navigation(startDestination = ROUTE_LIBRARY, route = ROUTE_HOME) {
         libraryScreen()
+        recentScreen()
+        browseScreen()
     }
 }

@@ -19,17 +19,28 @@ package id.synth.soto.feature.home.navigation
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import id.synth.soto.core.ui.icon.SotoIcons
+import id.synth.soto.feature.home.browse.R as browseR
 import id.synth.soto.feature.home.library.R as libraryR
+import id.synth.soto.feature.home.recent.R as recentR
 
 enum class HomeDestination(
     val iconUnselected: ImageVector,
     val iconSelected: ImageVector,
-    @StringRes
-    val textId: Int,
+    @StringRes val textId: Int,
 ) {
     LIBRARY(
         iconUnselected = SotoIcons.Library,
         iconSelected = SotoIcons.LibraryFilled,
         textId = libraryR.string.library,
-    )
+    ),
+    RECENT(
+        iconUnselected = SotoIcons.Recent,
+        iconSelected = SotoIcons.RecentFilled,
+        textId = recentR.string.recent,
+    ),
+    BROWSE(
+        iconUnselected = SotoIcons.Browse,
+        iconSelected = SotoIcons.BrowseFilled,
+        textId = browseR.string.browse,
+    ),
 }
