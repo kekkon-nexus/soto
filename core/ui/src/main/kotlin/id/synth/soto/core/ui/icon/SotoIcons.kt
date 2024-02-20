@@ -26,5 +26,5 @@ import androidx.compose.ui.graphics.vector.ImageVector
  */
 object SotoIcons {
     val Library = Icons.Outlined.LocalLibrary
-    val LibraryFilled = Icons.Rounded.LocalLibrary
+    val LibraryFilled = Icons.Filled.LocalLibrary
 }
