@@ -28,6 +28,7 @@ include(
 
 include(
     ":feature:home",
+    ":feature:home-browse",
     ":feature:home-library",
     ":feature:home-recent",
     ":feature:settings",
