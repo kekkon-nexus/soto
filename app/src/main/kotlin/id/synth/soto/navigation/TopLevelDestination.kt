@@ -14,17 +14,8 @@
  * limitations under the License.
  */
 
-plugins {
-    id.synth.soto.convention.presets.feature
-}
+package id.synth.soto.navigation
 
-android {
-    dependencies {
-        implementation(libs.androidx.navigation.compose)
-
-        // Projects
-        implementation(projects.core.ui)
-
-        implementation(projects.feature.homeLibrary)
-    }
+enum class TopLevelDestination {
+    HOME,
 }

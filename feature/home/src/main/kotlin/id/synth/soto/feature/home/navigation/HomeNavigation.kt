@@ -22,17 +22,17 @@ import androidx.navigation.NavOptions
 import androidx.navigation.navigation
 import id.synth.soto.feature.home.library.navigation.ROUTE_LIBRARY
 import id.synth.soto.feature.home.library.navigation.libraryScreen
+import id.synth.soto.feature.home.library.navigation.navigateToLibrary
 
 const val ROUTE_HOME = "home"
 
-fun NavController.navigateToHome(navOptions: NavOptions? = null) {
-    this.navigate(
-        ROUTE_HOME,
-        navOptions
-    )
+fun NavController.navigateToHome(destination: HomeDestination, navOptions: NavOptions? = null) {
+    when (destination) {
+        HomeDestination.LIBRARY -> navigateToLibrary(navOptions)
+    }
 }
 
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeNavigation() {
     navigation(startDestination = ROUTE_LIBRARY, route = ROUTE_HOME) {
         libraryScreen()
     }

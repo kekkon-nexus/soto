@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package id.synth.soto.navigation
+package id.synth.soto.feature.home.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
