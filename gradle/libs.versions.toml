@@ -2,7 +2,7 @@
 # Plugins
 java = "21"
 kotlin = "2.0.0-Beta4"
-ksp = "2.0.0-Beta4-1.0.17"
+ksp = "2.0.0-Beta4-1.0.18"
 
 android = "8.4.0-alpha10"
 compose-compiler = "1.5.11-dev-k2.0.0-Beta4-21f5e479a96"
