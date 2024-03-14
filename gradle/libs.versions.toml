@@ -7,7 +7,7 @@ ksp = "2.0.0-Beta4-1.0.17"
 android = "8.4.0-alpha10"
 compose-compiler = "1.5.11-dev-k2.0.0-Beta4-21f5e479a96"
 
-dagger = "2.50"
+dagger = "2.51"
 
 protobuf-plugin = "0.9.4"
 
