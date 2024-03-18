@@ -1,7 +1,7 @@
 [versions]
 # Plugins
 java = "21"
-kotlin = "2.0.0-Beta4"
+kotlin = "2.0.0-jupiter-231"
 ksp = "2.0.0-Beta4-1.0.19"
 
 android = "8.4.0-alpha13"
