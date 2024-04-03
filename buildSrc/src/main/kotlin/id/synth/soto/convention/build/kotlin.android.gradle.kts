@@ -18,11 +18,11 @@ package id.synth.soto.convention.build
 
 import id.synth.soto.convention.build.dsl.android
 import id.synth.soto.convention.build.dsl.autoNamespace
+import id.synth.soto.convention.build.dsl.javaLanguageVersion
+import id.synth.soto.convention.build.dsl.libs
 
 plugins {
     org.jetbrains.kotlin.android
-
-    id("id.synth.soto.convention.build.kotlin.jvm")
 }
 
 android {
@@ -31,5 +31,11 @@ android {
 
     defaultConfig {
         minSdk = 28
+    }
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion.convention(libs.versions.javaLanguageVersion)
     }
 }
