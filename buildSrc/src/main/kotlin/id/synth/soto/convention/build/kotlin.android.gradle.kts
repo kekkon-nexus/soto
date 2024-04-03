@@ -16,21 +16,20 @@
 
 package id.synth.soto.convention.build
 
-import com.android.build.api.dsl.CommonExtension
 import id.synth.soto.convention.build.dsl.android
-import id.synth.soto.convention.build.dsl.javaVersion
-import id.synth.soto.convention.build.dsl.libs
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
+import id.synth.soto.convention.build.dsl.autoNamespace
 
 plugins {
     org.jetbrains.kotlin.android
+
+    id("id.synth.soto.convention.build.kotlin.jvm")
 }
 
 android {
-    kotlinOptions {
-        jvmTarget = libs.versions.javaVersion.get().toString()
+    namespace = project.autoNamespace
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 28
     }
 }
-
-fun CommonExtension<*, *, *, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) =
-    (this as ExtensionAware).extensions.configure("kotlinOptions", block)

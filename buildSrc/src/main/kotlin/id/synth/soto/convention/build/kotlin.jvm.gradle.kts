@@ -25,6 +25,6 @@ plugins {
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(libs.versions.javaLanguageVersion)
+        languageVersion.convention(libs.versions.javaLanguageVersion)
     }
 }
