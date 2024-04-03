@@ -16,13 +16,25 @@
 
 package id.synth.soto.feature.home.library
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun LibraryScreen() {
-    Text(
-        text = stringResource(id = R.string.library)
-    )
+    val feature = stringResource(id = R.string.library)
+
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        items(50) { index ->
+            Text(text = "$feature $index")
+        }
+    }
 }
