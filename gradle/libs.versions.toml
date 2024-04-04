@@ -15,6 +15,7 @@ protobuf-plugin = "0.9.4"
 androidx-core = "1.12.0"
 
 androidx-activity = "1.8.2"
+androidx-hilt = "1.2.0"
 androidx-navigation = "2.7.7"
 
 androidx-datastore = "1.1.0-beta02"
@@ -61,6 +62,7 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 # Compose integrations
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidx-navigation" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidx-hilt" }
 
 # Compose extensions
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
