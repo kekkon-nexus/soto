@@ -33,7 +33,7 @@ fun LibraryScreen() {
         verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = Modifier.fillMaxWidth(),
     ) {
-        items(50) { index ->
+        items(100) { index ->
             Text(text = "$feature ${index + 1}")
         }
     }
