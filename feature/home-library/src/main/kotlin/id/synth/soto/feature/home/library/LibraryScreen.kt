@@ -34,7 +34,7 @@ fun LibraryScreen() {
         modifier = Modifier.fillMaxWidth(),
     ) {
         items(50) { index ->
-            Text(text = "$feature $index")
+            Text(text = "$feature ${index + 1}")
         }
     }
 }
