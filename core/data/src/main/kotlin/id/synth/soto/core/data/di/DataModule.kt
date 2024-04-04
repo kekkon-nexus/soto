@@ -28,7 +28,7 @@ import id.synth.soto.core.data.repository.UserPreferencesRepository
 abstract class DataModule {
 
     @Binds
-    internal abstract fun bindsUserDataRepository(
-        userDataRepository: OfflineFirstUserPreferencesRepository,
+    internal abstract fun bindsUserPreferencesRepository(
+        userPreferencesRepository: OfflineFirstUserPreferencesRepository,
     ): UserPreferencesRepository
 }

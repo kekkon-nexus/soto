@@ -25,7 +25,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import id.synth.soto.core.datastore.UserDataProto
+import id.synth.soto.core.datastore.UserPreferencesProto
 import id.synth.soto.core.datastore.UserPreferencesProtoSerializer
 import javax.inject.Singleton
 
@@ -37,10 +37,10 @@ object DataStoreModule {
     @Singleton
     internal fun providesUserPreferencesDataStore(
         @ApplicationContext context: Context,
-        userDataProtoSerializer: UserPreferencesProtoSerializer,
+        userPreferencesProtoSerializer: UserPreferencesProtoSerializer,
     ): DataStore<UserPreferencesProto> = DataStoreFactory.create(
-        serializer = userDataProtoSerializer
+        serializer = userPreferencesProtoSerializer
     ) {
-        context.dataStoreFile("user_data.pb")
+        context.dataStoreFile("user_preferences.pb")
     }
 }
