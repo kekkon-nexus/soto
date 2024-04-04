@@ -29,9 +29,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    userDataRepository: UserPreferencesRepository,
+    userPreferencesRepository: UserPreferencesRepository,
 ): ViewModel() {
-    val uiState: StateFlow<MainActivityUiState> = userDataRepository.userPreferences.map {
+    val uiState: StateFlow<MainActivityUiState> = userPreferencesRepository.userPreferences.map {
         MainActivityUiState.Success(it)
     }.stateIn(
         scope = viewModelScope,
