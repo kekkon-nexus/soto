@@ -28,3 +28,8 @@ plugins {
     id("id.synth.soto.convention.dependencies.androidx.compose.ui.tooling")
     id("id.synth.soto.convention.dependencies.androidx.compose.ui.tooling.test")
 }
+
+dependencies {
+    add("implementation", libs.androidx.navigation.compose)
+    add("implementation", libs.androidx.hilt.navigation.compose)
+}

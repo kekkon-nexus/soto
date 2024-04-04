@@ -20,9 +20,7 @@ plugins {
 
 android {
     dependencies {
-        implementation(libs.androidx.navigation.compose)
-
-        // Projects
+       // Projects
         implementation(projects.core.model)
     }
 }

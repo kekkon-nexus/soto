@@ -17,9 +17,3 @@
 plugins {
     id.synth.soto.convention.presets.feature
 }
-
-android {
-    dependencies {
-        implementation(libs.androidx.navigation.compose)
-    }
-}
