@@ -16,12 +16,20 @@
 
 package id.synth.soto.ui
 
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import id.synth.soto.R
-import id.synth.soto.feature.home.ui.HomeScaffold
+import id.synth.soto.feature.home.navigation.HomeDestination
+import id.synth.soto.feature.home.ui.HomeBottomBar
+import id.synth.soto.feature.home.ui.HomeTopBar
 import id.synth.soto.navigation.SotoNavHost
 import id.synth.soto.navigation.TopLevelDestination
 
@@ -34,16 +42,35 @@ fun SotoApp(
     @Composable
     fun navHost() = SotoNavHost(appState)
 
-    when (currentDestination.asTopLevel()) {
-        TopLevelDestination.HOME -> HomeScaffold(
-            appName = stringResource(id = R.string.app_name),
-            onNavigateTo = appState::navigateToHome,
-            currentDestination = currentDestination,
+    val topLevelDestination = currentDestination.asTopLevel()
+
+    Scaffold(
+        topBar = {
+            when (topLevelDestination) {
+                TopLevelDestination.HOME -> HomeTopBar(appName = stringResource(id = R.string.app_name))
+                null -> {}
+            }
+        },
+        bottomBar = {
+            when (topLevelDestination) {
+                TopLevelDestination.HOME -> HomeBottomBar(
+                    destinations = HomeDestination.entries,
+                    onNavigateTo = appState::navigateToHome,
+                    currentDestination = currentDestination,
+                )
+
+                null -> {}
+            }
+        },
+    ) { innerPadding ->
+        Row(
+            Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding),
         ) {
             navHost()
         }
-
-        null -> navHost()
     }
 }
 

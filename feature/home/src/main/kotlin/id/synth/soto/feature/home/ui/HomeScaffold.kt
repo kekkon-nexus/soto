@@ -16,16 +16,10 @@
 
 package id.synth.soto.feature.home.ui
 
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.consumeWindowInsets
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -34,33 +28,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import id.synth.soto.feature.home.navigation.HomeDestination
-
-@Composable
-fun HomeScaffold(
-    appName: String,
-    onNavigateTo: (HomeDestination) -> Unit,
-    currentDestination: NavDestination?,
-    content: @Composable() (RowScope.() -> Unit)
-) {
-    Scaffold(
-        topBar = { HomeTopBar(appName = appName) },
-        bottomBar = {
-            HomeBottomBar(
-                destinations = HomeDestination.entries,
-                onNavigateTo = onNavigateTo,
-                currentDestination = currentDestination,
-            )
-        },
-    ) { innerPadding ->
-        Row(
-            Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .consumeWindowInsets(innerPadding),
-            content = content,
-        )
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,7 +42,7 @@ fun HomeBottomBar(
     destinations: List<HomeDestination>,
     onNavigateTo: (HomeDestination) -> Unit,
     currentDestination: NavDestination?,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     NavigationBar(modifier = modifier) {
         destinations.forEach { destination ->
