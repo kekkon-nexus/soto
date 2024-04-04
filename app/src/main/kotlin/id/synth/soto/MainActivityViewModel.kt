@@ -19,8 +19,8 @@ package id.synth.soto
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.synth.soto.core.data.repository.UserDataRepository
-import id.synth.soto.model.data.UserData
+import id.synth.soto.core.data.repository.UserPreferencesRepository
+import id.synth.soto.model.data.UserPreferences
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
@@ -29,9 +29,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    userDataRepository: UserDataRepository,
+    userDataRepository: UserPreferencesRepository,
 ): ViewModel() {
-    val uiState: StateFlow<MainActivityUiState> = userDataRepository.userData.map {
+    val uiState: StateFlow<MainActivityUiState> = userDataRepository.userPreferences.map {
         MainActivityUiState.Success(it)
     }.stateIn(
         scope = viewModelScope,
@@ -42,5 +42,5 @@ class MainActivityViewModel @Inject constructor(
 
 sealed interface MainActivityUiState {
     data object Loading : MainActivityUiState
-    data class Success(val userData: UserData) : MainActivityUiState
+    data class Success(val userPreferences: UserPreferences) : MainActivityUiState
 }

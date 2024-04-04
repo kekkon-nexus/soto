@@ -103,7 +103,7 @@ private fun shouldUseDarkTheme(
     uiState: MainActivityUiState,
 ): Boolean = when (uiState) {
     Loading -> isSystemInDarkTheme()
-    is Success -> when (uiState.userData.darkThemeConfig) {
+    is Success -> when (uiState.userPreferences.darkThemeConfig) {
         DarkThemeConfig.FOLLOW_SYSTEM -> isSystemInDarkTheme()
         DarkThemeConfig.LIGHT -> false
         DarkThemeConfig.DARK -> true
@@ -118,7 +118,7 @@ private fun shouldUseDynamicColor(
     uiState: MainActivityUiState,
 ): Boolean = when (uiState) {
     Loading -> false
-    is Success -> uiState.userData.useDynamicColor
+    is Success -> uiState.userPreferences.useDynamicColor
 }
 
 /**

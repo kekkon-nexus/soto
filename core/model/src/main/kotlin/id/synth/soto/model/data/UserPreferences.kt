@@ -16,7 +16,7 @@
 
 package id.synth.soto.model.data
 
-data class UserData(
+data class UserPreferences(
     val darkThemeConfig: DarkThemeConfig,
     val useDynamicColor: Boolean,
 )

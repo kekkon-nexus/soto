@@ -18,15 +18,15 @@ package id.synth.soto.core.datastore
 
 import androidx.datastore.core.DataStore
 import id.synth.soto.model.data.DarkThemeConfig
-import id.synth.soto.model.data.UserData
+import id.synth.soto.model.data.UserPreferences
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class UserDataProtoDataStore @Inject constructor(
-    private val dataStore: DataStore<UserDataProto>,
+class UserPreferencesProtoDataStore @Inject constructor(
+    private val dataStore: DataStore<UserPreferencesProto>,
 ) {
-    val userData = dataStore.data.map {
-        UserData(
+    val userPreferences = dataStore.data.map {
+        UserPreferences(
             darkThemeConfig = when (it.darkThemeConfig) {
                 null,
                 DarkThemeConfigProto.UNRECOGNIZED,

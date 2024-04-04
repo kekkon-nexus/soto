@@ -17,14 +17,14 @@
 package id.synth.soto.core.data.repository
 
 import id.synth.soto.model.data.DarkThemeConfig
-import id.synth.soto.model.data.UserData
+import id.synth.soto.model.data.UserPreferences
 import kotlinx.coroutines.flow.Flow
 
-interface UserDataRepository {
+interface UserPreferencesRepository {
     /**
-     * Stream of [UserData].
+     * Stream of [UserPreferences].
      */
-    val userData: Flow<UserData>
+    val userPreferences: Flow<UserPreferences>
 
     /**
      * Sets the desired dark theme config.

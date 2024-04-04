@@ -24,20 +24,20 @@ import java.io.OutputStream
 import javax.inject.Inject
 
 /**
- * An [androidx.datastore.core.Serializer] for the [UserDataProto] proto.
+ * An [androidx.datastore.core.Serializer] for the [UserPrefencesProto] proto.
  */
-class UserDataProtoSerializer @Inject constructor() : Serializer<UserDataProto> {
-    override val defaultValue: UserDataProto = UserDataProto.getDefaultInstance()
+class UserPreferencesProtoSerializer @Inject constructor() : Serializer<UserPreferencesProto> {
+    override val defaultValue: UserPreferencesProto = UserPreferencesProto.getDefaultInstance()
 
-    override suspend fun readFrom(input: InputStream): UserDataProto =
+    override suspend fun readFrom(input: InputStream): UserPreferencesProto =
         try {
             // readFrom is already called on the datastore background thread
-            UserDataProto.parseFrom(input)
+            UserPreferencesProto.parseFrom(input)
         } catch (exception: InvalidProtocolBufferException) {
             throw CorruptionException("Cannot read proto.", exception)
         }
 
-    override suspend fun writeTo(t: UserDataProto, output: OutputStream) {
+    override suspend fun writeTo(t: UserPreferencesProto, output: OutputStream) {
         t.writeTo(output)
     }
 }

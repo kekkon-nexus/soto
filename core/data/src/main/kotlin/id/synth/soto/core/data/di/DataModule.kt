@@ -20,8 +20,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import id.synth.soto.core.data.repository.OfflineFirstUserDataRepository
-import id.synth.soto.core.data.repository.UserDataRepository
+import id.synth.soto.core.data.repository.OfflineFirstUserPreferencesRepository
+import id.synth.soto.core.data.repository.UserPreferencesRepository
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -29,6 +29,6 @@ abstract class DataModule {
 
     @Binds
     internal abstract fun bindsUserDataRepository(
-        userDataRepository: OfflineFirstUserDataRepository,
-    ): UserDataRepository
+        userDataRepository: OfflineFirstUserPreferencesRepository,
+    ): UserPreferencesRepository
 }
