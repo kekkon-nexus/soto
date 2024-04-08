@@ -30,6 +30,9 @@ plugins {
 }
 
 dependencies {
+    add("implementation", libs.androidx.lifecycle.runtime.compose)
+    add("implementation", libs.androidx.lifecycle.viewmodel.compose)
+
     add("implementation", libs.androidx.navigation.compose)
     add("implementation", libs.androidx.hilt.navigation.compose)
 }
