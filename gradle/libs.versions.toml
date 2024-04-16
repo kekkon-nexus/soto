@@ -1,11 +1,11 @@
 [versions]
 # Plugins
 java = "21"
-kotlin = "2.0.0-Beta5"
-ksp = "2.0.0-Beta5-1.0.20"
+kotlin = "2.0.0-RC1"
+ksp = "2.0.0-RC1-1.0.20"
 
 android = "8.5.0-alpha05"
-compose-compiler = "1.5.11-dev-k2.0.0-Beta5-b5a216d0ac6"
+compose-compiler = "1.5.13-dev-k2.0.0-RC1-50f08dfa4b4"
 
 dagger = "2.51.1"
 
