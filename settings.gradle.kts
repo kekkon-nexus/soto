@@ -23,6 +23,7 @@ include(
     ":core:datastore",
     ":core:datastore-proto",
     ":core:model",
+    ":core:source",
     ":core:ui",
 )
 
@@ -41,9 +42,6 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-
-        // TODEL Kotlin 2.0
-        maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
     }
 }
 
@@ -61,6 +59,5 @@ dependencyResolutionManagement {
 
         // TODEL Kotlin 2.0
         maven(url = "https://androidx.dev/storage/compose-compiler/repository/")
-        maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
     }
 }
