@@ -25,6 +25,7 @@ protobuf = "4.26.1"
 kotlinx-coroutines = "1.8.0"
 
 androidx-compose-bom = "2024.04.01"
+compose-symbols = "1.0.0"
 coil = "2.6.0"
 
 junit = "4.13.2"
@@ -49,16 +50,18 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger" }
 
 # KotlinX
-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines"}
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose-bom" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+compose-symbols-core = { group = "dev.tclement.compose.symbols", name = "core", version.ref = "compose-symbols" }
+compose-symbols-outlined-g0-w400 = { group = "dev.tclement.compose.symbols", name = "outlined-g0-w400", version.ref = "compose-symbols" }
 
 # Compose integrations
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
@@ -82,6 +85,11 @@ buildSrc = [
     "buildSrc-hilt-android",
     "buildSrc-kotlin",
     "buildSrc-ksp",
+]
+
+compose-symbols = [
+    "compose-symbols-core",
+    "compose-symbols-outlined-g0-w400",
 ]
 
 [plugins]

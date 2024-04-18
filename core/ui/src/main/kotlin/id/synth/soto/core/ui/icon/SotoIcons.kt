@@ -16,23 +16,23 @@
 
 package id.synth.soto.core.ui.icon
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.BrowseGallery
-import androidx.compose.material.icons.filled.LibraryAdd
-import androidx.compose.material.icons.filled.LocalLibrary
-import androidx.compose.material.icons.outlined.BrowseGallery
-import androidx.compose.material.icons.outlined.LibraryAdd
-import androidx.compose.material.icons.outlined.LocalLibrary
 import androidx.compose.ui.graphics.vector.ImageVector
+import dev.tclement.compose.symbols.Symbols
+import dev.tclement.compose.symbols.outlined.filled.g0.w400.BrowseGallery
+import dev.tclement.compose.symbols.outlined.filled.g0.w400.LibraryAdd
+import dev.tclement.compose.symbols.outlined.filled.g0.w400.LocalLibrary
+import dev.tclement.compose.symbols.outlined.g0.w400.BrowseGallery
+import dev.tclement.compose.symbols.outlined.g0.w400.LibraryAdd
+import dev.tclement.compose.symbols.outlined.g0.w400.LocalLibrary
 
 /**
  * Soto icons. Material icons are [ImageVector]s.
  */
 object SotoIcons {
-    val Browse = Icons.Outlined.LibraryAdd
-    val BrowseFilled = Icons.Filled.LibraryAdd
-    val Library = Icons.Outlined.LocalLibrary
-    val LibraryFilled = Icons.Filled.LocalLibrary
-    val Recent = Icons.Outlined.BrowseGallery
-    val RecentFilled = Icons.Filled.BrowseGallery
+    val Browse = Symbols.Outlined.Grade0.Weight400.LibraryAdd
+    val BrowseFilled = Symbols.Outlined.Grade0.Weight400.Filled.LibraryAdd
+    val Library = Symbols.Outlined.Grade0.Weight400.LocalLibrary
+    val LibraryFilled = Symbols.Outlined.Grade0.Weight400.Filled.LocalLibrary
+    val Recent = Symbols.Outlined.Grade0.Weight400.BrowseGallery
+    val RecentFilled = Symbols.Outlined.Grade0.Weight400.Filled.BrowseGallery
 }
