@@ -1,3 +1,5 @@
+import org.gradle.api.internal.lambdas.SerializableLambdas.action
+
 /*
  * Copyright 2024 Soto contributors
  *
@@ -57,14 +59,18 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
 
-        maven(url = "https://maven.pkg.github.com/tclement0922/material-symbols-compose") {
-            credentials {
-                username = "yvvki"
-                password = "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"
-            }
-        }
+        mavenGithub(url = "https://maven.pkg.github.com/tclement0922/material-symbols-compose")
 
         // TODEL Kotlin 2.0
         maven(url = "https://androidx.dev/storage/compose-compiler/repository/")
+    }
+}
+
+fun RepositoryHandler.mavenGithub(
+    url: Any,
+) = maven(url) {
+    credentials {
+        username = "yvvki"
+        password = "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"
     }
 }
