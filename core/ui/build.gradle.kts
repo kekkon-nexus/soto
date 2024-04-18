@@ -22,6 +22,5 @@ plugins {
 
 dependencies {
     // Compose integrations
-    api(libs.androidx.compose.material.icons.extended)
     api(libs.bundles.compose.symbols)
 }
