@@ -24,7 +24,7 @@ protobuf = "4.26.1"
 
 kotlinx-coroutines = "1.8.0"
 
-androidx-compose-bom = "2024.04.01"
+androidx-compose-bom = "2024.05.00"
 compose-symbols = "1.0.0"
 coil = "2.6.0"
 
