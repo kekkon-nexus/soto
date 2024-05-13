@@ -22,7 +22,7 @@ androidx-navigation = "2.7.7"
 androidx-datastore = "1.1.1"
 protobuf = "4.26.1"
 
-kotlinx-coroutines = "1.8.0"
+kotlinx-coroutines = "1.8.1"
 
 androidx-compose-bom = "2024.05.00"
 compose-symbols = "1.0.0"
