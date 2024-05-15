@@ -28,3 +28,17 @@ plugins {
     id("nexus.kekkon.soto.convention.dependencies.androidx.compose.ui.tooling")
     id("nexus.kekkon.soto.convention.dependencies.androidx.compose.ui.tooling.test")
 }
+
+android {
+    defaultConfig {
+        applicationId = namespace
+    }
+}
+
+dependencies {
+    add("implementation", libs.androidx.core.ktx)
+
+    // Compose
+    add("implementation", libs.androidx.activity.compose)
+    add("implementation", libs.androidx.navigation.compose)
+}

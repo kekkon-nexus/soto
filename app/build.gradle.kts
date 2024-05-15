@@ -20,7 +20,6 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId = namespace
         versionCode = 1
         versionName = "1.0"
 
@@ -35,7 +34,7 @@ android {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -47,12 +46,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-
-    // Compose
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-
     // Projects
     implementation(projects.core.data)
     implementation(projects.core.datastore)

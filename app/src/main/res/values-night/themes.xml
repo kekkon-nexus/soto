@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Copyright 2024 Soto contributors
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,7 @@
   ~ limitations under the License.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="NightAdjusted.Theme.Soto" parent="android:Theme.Material.NoActionBar" />
 

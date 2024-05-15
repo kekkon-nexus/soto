@@ -47,7 +47,9 @@ fun SotoApp(
     Scaffold(
         topBar = {
             when (topLevelDestination) {
-                TopLevelDestination.HOME -> HomeTopBar(appName = stringResource(id = R.string.app_name))
+                TopLevelDestination.HOME ->
+                    HomeTopBar(appName = stringResource(id = R.string.app_name))
+
                 null -> {}
             }
         },

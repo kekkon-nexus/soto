@@ -38,7 +38,6 @@ class UserPreferencesProtoSerializer @Inject constructor() : Serializer<UserPref
             throw CorruptionException("Cannot read proto.", exception)
         }
 
-    override suspend fun writeTo(t: UserPreferencesProto, output: OutputStream) {
+    override suspend fun writeTo(t: UserPreferencesProto, output: OutputStream) =
         t.writeTo(output)
-    }
 }

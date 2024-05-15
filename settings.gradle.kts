@@ -1,5 +1,3 @@
-import org.gradle.api.internal.lambdas.SerializableLambdas.action
-
 /*
  * Copyright 2024 Soto contributors
  *
@@ -25,7 +23,6 @@ include(
     ":core:datastore",
     ":core:datastore-proto",
     ":core:model",
-    ":core:source",
     ":core:ui",
 )
 
@@ -60,9 +57,6 @@ dependencyResolutionManagement {
         mavenCentral()
 
         mavenGithub(url = "https://maven.pkg.github.com/tclement0922/material-symbols-compose")
-
-        // TODEL Kotlin 2.0
-        maven(url = "https://androidx.dev/storage/compose-compiler/repository/")
     }
 }
 

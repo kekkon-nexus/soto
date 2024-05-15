@@ -20,7 +20,7 @@ plugins {
 
 android {
     dependencies {
-       // Projects
+        // Projects
         implementation(projects.core.model)
     }
 }
