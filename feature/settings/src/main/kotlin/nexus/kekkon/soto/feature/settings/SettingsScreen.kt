@@ -19,7 +19,7 @@ package nexus.kekkon.soto.feature.settings
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import id.synth.soto.feature.settings.R
+import nexus.kekkon.soto.feature.settings.R
 
 @Composable
 fun SettingsScreen() {

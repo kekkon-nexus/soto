@@ -27,5 +27,5 @@ internal val Project.autoNamespace: String
             .replace(":", ".")
             .replace("-", ".")
 
-        return "id.synth.$`package`$subpackage"
+        return "nexus.kekkon.$`package`$subpackage"
     }

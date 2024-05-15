@@ -19,9 +19,9 @@ package nexus.kekkon.soto.feature.home.navigation
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import nexus.kekkon.soto.core.ui.icon.SotoIcons
-import id.synth.soto.feature.home.browse.R as browseR
-import id.synth.soto.feature.home.library.R as libraryR
-import id.synth.soto.feature.home.recent.R as recentR
+import nexus.kekkon.soto.feature.home.browse.R as browseR
+import nexus.kekkon.soto.feature.home.library.R as libraryR
+import nexus.kekkon.soto.feature.home.recent.R as recentR
 
 enum class HomeDestination(
     val iconUnselected: ImageVector,
