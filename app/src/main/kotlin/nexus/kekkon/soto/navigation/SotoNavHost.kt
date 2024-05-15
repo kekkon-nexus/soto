@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package id.synth.soto.navigation
+package nexus.kekkon.soto.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import id.synth.soto.feature.home.navigation.ROUTE_HOME
 import id.synth.soto.feature.home.navigation.homeNavigation
-import id.synth.soto.ui.SotoAppState
+import nexus.kekkon.soto.ui.SotoAppState
 
 @Composable
 fun SotoNavHost(

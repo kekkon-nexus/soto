@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package id.synth.soto.ui
+package nexus.kekkon.soto.ui
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.consumeWindowInsets
@@ -30,8 +30,8 @@ import id.synth.soto.R
 import id.synth.soto.feature.home.navigation.HomeDestination
 import id.synth.soto.feature.home.ui.HomeBottomBar
 import id.synth.soto.feature.home.ui.HomeTopBar
-import id.synth.soto.navigation.SotoNavHost
-import id.synth.soto.navigation.TopLevelDestination
+import nexus.kekkon.soto.navigation.SotoNavHost
+import nexus.kekkon.soto.navigation.TopLevelDestination
 
 @Composable
 fun SotoApp(

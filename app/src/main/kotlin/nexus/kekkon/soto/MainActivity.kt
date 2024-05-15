@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package id.synth.soto
+package nexus.kekkon.soto
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -32,11 +32,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import dagger.hilt.android.AndroidEntryPoint
-import id.synth.soto.MainActivityUiState.Loading
-import id.synth.soto.MainActivityUiState.Success
+import nexus.kekkon.soto.MainActivityUiState.Loading
+import nexus.kekkon.soto.MainActivityUiState.Success
 import id.synth.soto.core.ui.theme.SotoTheme
 import id.synth.soto.model.data.DarkThemeConfig
-import id.synth.soto.ui.SotoApp
+import nexus.kekkon.soto.ui.SotoApp
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch

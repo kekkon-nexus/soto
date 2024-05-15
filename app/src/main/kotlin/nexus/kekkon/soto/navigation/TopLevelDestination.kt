@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-package id.synth.soto
+package nexus.kekkon.soto.navigation
 
-import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
-import javax.inject.Inject
-
-/**
- * [Application] class for Soto
- */
-@HiltAndroidApp
-class MainApplication : Application()
+enum class TopLevelDestination {
+    HOME,
+}
