@@ -18,7 +18,7 @@ package nexus.kekkon.soto.feature.home.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
-import id.synth.soto.core.ui.icon.SotoIcons
+import nexus.kekkon.soto.core.ui.icon.SotoIcons
 import id.synth.soto.feature.home.browse.R as browseR
 import id.synth.soto.feature.home.library.R as libraryR
 import id.synth.soto.feature.home.recent.R as recentR

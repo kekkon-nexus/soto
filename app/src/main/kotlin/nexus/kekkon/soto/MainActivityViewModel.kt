@@ -19,8 +19,8 @@ package nexus.kekkon.soto
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.synth.soto.core.data.repository.UserPreferencesRepository
-import id.synth.soto.model.data.UserPreferences
+import nexus.kekkon.soto.core.data.repository.UserPreferencesRepository
+import nexus.kekkon.soto.core.model.data.UserPreferences
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
