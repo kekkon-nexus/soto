@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package id.synth.soto
+package nexus.kekkon.soto
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package id.synth.soto
+package nexus.kekkon.soto
 
 import org.junit.Test
 
