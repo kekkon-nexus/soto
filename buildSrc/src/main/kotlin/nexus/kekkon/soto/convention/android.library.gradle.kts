@@ -14,18 +14,10 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package nexus.kekkon.soto.convention
 
-import org.gradle.api.Project
+plugins {
+    com.android.library
 
-internal val Project.autoNamespace: String
-    get() {
-        val `package` = rootProject.name
-        val subpackage = project
-            .path
-            .removePrefix(":app")
-            .replace(":", ".")
-            .replace("-", ".")
-
-        return "id.synth.$`package`$subpackage"
-    }
+    id("nexus.kekkon.soto.convention.build.kotlin.android")
+}

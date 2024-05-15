@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package nexus.kekkon.soto.convention
 
-import org.gradle.accessors.dm.LibrariesForLibs.VersionAccessors
-import org.gradle.api.provider.Provider
-import org.gradle.jvm.toolchain.JavaLanguageVersion
+import nexus.kekkon.soto.convention.build.dsl.libs
 
-internal val VersionAccessors.javaLanguageVersion: Provider<JavaLanguageVersion>
-    get() = this.java.map(JavaLanguageVersion::of)
+plugins {
+    id("nexus.kekkon.soto.convention.build.ksp")
+
+    com.google.dagger.hilt.android
+}
+
+dependencies {
+    add("implementation", libs.hilt.android)
+    add("ksp", libs.hilt.android.compiler)
+}

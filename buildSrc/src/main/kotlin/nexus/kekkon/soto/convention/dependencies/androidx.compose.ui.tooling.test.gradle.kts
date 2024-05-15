@@ -14,17 +14,12 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build
+package nexus.kekkon.soto.convention.dependencies
 
-import id.synth.soto.convention.build.dsl.javaLanguageVersion
-import id.synth.soto.convention.build.dsl.libs
+import nexus.kekkon.soto.convention.build.dsl.libs
 
-plugins {
-    org.jetbrains.kotlin.jvm
-}
-
-kotlin {
-    jvmToolchain {
-        languageVersion.convention(libs.versions.javaLanguageVersion)
-    }
+dependencies {
+    // UI Tests
+    add("androidTestImplementation", libs.androidx.compose.ui.test.junit4)
+    add("debugImplementation", libs.androidx.compose.ui.test.manifest)
 }

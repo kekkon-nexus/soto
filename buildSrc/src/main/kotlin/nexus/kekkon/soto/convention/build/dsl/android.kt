@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention
+package nexus.kekkon.soto.convention.build.dsl
 
-import id.synth.soto.convention.build.dsl.libs
+import com.android.build.api.dsl.CommonExtension
+import org.gradle.api.Action
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.get
 
-plugins {
-    id("id.synth.soto.convention.build.ksp")
+/*
+ * Used for emulating `android` extension and block in convention plugin.
+ */
 
-    com.google.dagger.hilt.android
-}
+internal typealias AnyCommonExtension = CommonExtension<*, *, *, *, *, *>
 
-dependencies {
-    add("implementation", libs.hilt.android)
-    add("ksp", libs.hilt.android.compiler)
-}
+internal val Project.android: AnyCommonExtension
+    get() = this.extensions["android"] as AnyCommonExtension
+
+internal fun Project.android(block: Action<AnyCommonExtension>) = block.execute(android)

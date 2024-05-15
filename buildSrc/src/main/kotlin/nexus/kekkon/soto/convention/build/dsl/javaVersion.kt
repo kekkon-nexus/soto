@@ -14,17 +14,11 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.presets
+package nexus.kekkon.soto.convention.build.dsl
 
-import id.synth.soto.convention.build.dsl.libs
+import org.gradle.accessors.dm.LibrariesForLibs.VersionAccessors
+import org.gradle.api.provider.Provider
+import org.gradle.jvm.toolchain.JavaLanguageVersion
 
-plugins {
-    id("id.synth.soto.convention.android.application")
-    id("id.synth.soto.convention.androidx.compose")
-
-    id("id.synth.soto.convention.hilt.android")
-
-    id("id.synth.soto.convention.dependencies.android.test")
-    id("id.synth.soto.convention.dependencies.androidx.compose.ui.tooling")
-    id("id.synth.soto.convention.dependencies.androidx.compose.ui.tooling.test")
-}
+internal val VersionAccessors.javaLanguageVersion: Provider<JavaLanguageVersion>
+    get() = this.java.map(JavaLanguageVersion::of)

@@ -15,8 +15,8 @@
  */
 
 plugins {
-    id.synth.soto.convention.android.library
-    id.synth.soto.convention.hilt.android
+    nexus.kekkon.soto.convention.android.library
+    nexus.kekkon.soto.convention.hilt.android
 }
 
 android {

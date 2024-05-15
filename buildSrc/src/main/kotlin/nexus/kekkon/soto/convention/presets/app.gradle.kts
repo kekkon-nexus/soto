@@ -14,28 +14,17 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build
+package nexus.kekkon.soto.convention.presets
 
-import id.synth.soto.convention.build.dsl.android
-import id.synth.soto.convention.build.dsl.autoNamespace
-import id.synth.soto.convention.build.dsl.javaLanguageVersion
-import id.synth.soto.convention.build.dsl.libs
+import nexus.kekkon.soto.convention.build.dsl.libs
 
 plugins {
-    org.jetbrains.kotlin.android
-}
+    id("nexus.kekkon.soto.convention.android.application")
+    id("nexus.kekkon.soto.convention.androidx.compose")
 
-android {
-    namespace = project.autoNamespace
-    compileSdk = 34
+    id("nexus.kekkon.soto.convention.hilt.android")
 
-    defaultConfig {
-        minSdk = 28
-    }
-}
-
-kotlin {
-    jvmToolchain {
-        languageVersion.convention(libs.versions.javaLanguageVersion)
-    }
+    id("nexus.kekkon.soto.convention.dependencies.android.test")
+    id("nexus.kekkon.soto.convention.dependencies.androidx.compose.ui.tooling")
+    id("nexus.kekkon.soto.convention.dependencies.androidx.compose.ui.tooling.test")
 }

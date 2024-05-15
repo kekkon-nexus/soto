@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build
+package nexus.kekkon.soto.convention.dependencies
 
-plugins {
-    org.jetbrains.kotlin.plugin.compose
+import nexus.kekkon.soto.convention.build.dsl.libs
+
+dependencies {
+    // Android Studio Preview
+    add("implementation", libs.androidx.compose.ui.tooling.preview)
+    add("debugImplementation", libs.androidx.compose.ui.tooling)
 }

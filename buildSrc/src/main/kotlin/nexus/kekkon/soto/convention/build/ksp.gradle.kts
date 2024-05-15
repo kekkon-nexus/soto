@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.dependencies
+package nexus.kekkon.soto.convention.build
 
-import id.synth.soto.convention.build.dsl.libs
-
-dependencies {
-    // UI Tests
-    add("androidTestImplementation", libs.androidx.compose.ui.test.junit4)
-    add("debugImplementation", libs.androidx.compose.ui.test.manifest)
+plugins {
+    com.google.devtools.ksp
 }

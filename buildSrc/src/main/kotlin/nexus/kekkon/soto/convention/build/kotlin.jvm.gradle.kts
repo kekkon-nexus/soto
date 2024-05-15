@@ -14,25 +14,17 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention
+package nexus.kekkon.soto.convention.build
 
-import id.synth.soto.convention.build.dsl.android
-import id.synth.soto.convention.build.dsl.libs
+import nexus.kekkon.soto.convention.build.dsl.javaLanguageVersion
+import nexus.kekkon.soto.convention.build.dsl.libs
 
 plugins {
-    id("id.synth.soto.convention.build.kotlin.plugin.compose")
+    org.jetbrains.kotlin.jvm
 }
 
-android {
-    buildFeatures {
-        compose = true
+kotlin {
+    jvmToolchain {
+        languageVersion.convention(libs.versions.javaLanguageVersion)
     }
-}
-
-dependencies {
-    val composeBom = platform(libs.androidx.compose.bom)
-    add("implementation", composeBom)
-    add("androidTestImplementation", composeBom)
-
-    add("implementation", libs.androidx.compose.material3)
 }

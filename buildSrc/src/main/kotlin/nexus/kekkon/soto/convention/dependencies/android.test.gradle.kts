@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention
+package nexus.kekkon.soto.convention.dependencies
 
-plugins {
-    com.android.library
+import nexus.kekkon.soto.convention.build.dsl.libs
 
-    id("id.synth.soto.convention.build.kotlin.android")
+dependencies {
+    add("testImplementation", libs.junit)
+    add("androidTestImplementation", libs.androidx.test.ext.junit.ktx)
 }

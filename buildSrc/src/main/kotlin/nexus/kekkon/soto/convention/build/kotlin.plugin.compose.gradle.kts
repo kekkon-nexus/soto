@@ -14,20 +14,8 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package nexus.kekkon.soto.convention.build
 
-import com.android.build.api.dsl.CommonExtension
-import org.gradle.api.Action
-import org.gradle.api.Project
-import org.gradle.kotlin.dsl.get
-
-/*
- * Used for emulating `android` extension and block in convention plugin.
- */
-
-internal typealias AnyCommonExtension = CommonExtension<*, *, *, *, *, *>
-
-internal val Project.android: AnyCommonExtension
-    get() = this.extensions["android"] as AnyCommonExtension
-
-internal fun Project.android(block: Action<AnyCommonExtension>) = block.execute(android)
+plugins {
+    org.jetbrains.kotlin.plugin.compose
+}

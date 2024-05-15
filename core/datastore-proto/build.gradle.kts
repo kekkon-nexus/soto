@@ -15,7 +15,7 @@
  */
 
 plugins {
-    id.synth.soto.convention.android.library
+    nexus.kekkon.soto.convention.android.library
 
     alias(libs.plugins.protobuf)
 }

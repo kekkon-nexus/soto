@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build
+package nexus.kekkon.soto.convention
 
 plugins {
-    com.google.devtools.ksp
+    id("nexus.kekkon.soto.convention.build.kotlin.jvm")
 }

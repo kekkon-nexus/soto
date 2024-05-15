@@ -14,14 +14,25 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention
+package nexus.kekkon.soto.convention
+
+import nexus.kekkon.soto.convention.build.dsl.android
+import nexus.kekkon.soto.convention.build.dsl.libs
 
 plugins {
-    com.android.application
-
-    id("id.synth.soto.convention.build.kotlin.android")
+    id("nexus.kekkon.soto.convention.build.kotlin.plugin.compose")
 }
 
 android {
-    defaultConfig.targetSdk = compileSdk
+    buildFeatures {
+        compose = true
+    }
+}
+
+dependencies {
+    val composeBom = platform(libs.androidx.compose.bom)
+    add("implementation", composeBom)
+    add("androidTestImplementation", composeBom)
+
+    add("implementation", libs.androidx.compose.material3)
 }

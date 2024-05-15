@@ -14,12 +14,28 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.build.dsl
+package nexus.kekkon.soto.convention.build
 
-import org.gradle.accessors.dm.LibrariesForLibs
-import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import nexus.kekkon.soto.convention.build.dsl.android
+import nexus.kekkon.soto.convention.build.dsl.autoNamespace
+import nexus.kekkon.soto.convention.build.dsl.javaLanguageVersion
+import nexus.kekkon.soto.convention.build.dsl.libs
 
-// TODEL https://github.com/gradle/gradle/issues/15383
-internal val Project.libs: LibrariesForLibs
-    get() = this.extensions.getByType()
+plugins {
+    org.jetbrains.kotlin.android
+}
+
+android {
+    namespace = project.autoNamespace
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 28
+    }
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion.convention(libs.versions.javaLanguageVersion)
+    }
+}

@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package id.synth.soto.convention.dependencies
+package nexus.kekkon.soto.convention.build.dsl
 
-import id.synth.soto.convention.build.dsl.libs
+import org.gradle.api.Project
 
-dependencies {
-    // Android Studio Preview
-    add("implementation", libs.androidx.compose.ui.tooling.preview)
-    add("debugImplementation", libs.androidx.compose.ui.tooling)
-}
+internal val Project.autoNamespace: String
+    get() {
+        val `package` = rootProject.name
+        val subpackage = project
+            .path
+            .removePrefix(":app")
+            .replace(":", ".")
+            .replace("-", ".")
+
+        return "id.synth.$`package`$subpackage"
+    }

@@ -15,7 +15,7 @@
  */
 
 plugins {
-    id.synth.soto.convention.presets.app
+    nexus.kekkon.soto.convention.presets.app
 }
 
 android {
