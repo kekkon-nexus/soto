@@ -14,27 +14,16 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.navigation
+package nexus.kekkon.soto.feature.settings
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import nexus.kekkon.soto.feature.home.navigation.ROUTE_HOME
-import nexus.kekkon.soto.feature.home.navigation.homeNavigation
-import nexus.kekkon.soto.ui.SotoAppState
+import androidx.compose.ui.res.stringResource
+import id.synth.soto.feature.settings.R
 
 @Composable
-fun SotoNavHost(
-    appState: SotoAppState,
-    modifier: Modifier = Modifier,
-    startDestination: String = ROUTE_HOME,
-) {
-    val navController = appState.navController
-    NavHost(
-        navController = navController,
-        startDestination = startDestination,
-        modifier = modifier,
-    ) {
-        homeNavigation()
-    }
+fun SettingsScreen() {
+    Text(
+        text = stringResource(id = R.string.settings)
+    )
 }

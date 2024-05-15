@@ -27,9 +27,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import id.synth.soto.R
-import id.synth.soto.feature.home.navigation.HomeDestination
-import id.synth.soto.feature.home.ui.HomeBottomBar
-import id.synth.soto.feature.home.ui.HomeTopBar
+import nexus.kekkon.soto.feature.home.navigation.HomeDestination
+import nexus.kekkon.soto.feature.home.ui.HomeBottomBar
+import nexus.kekkon.soto.feature.home.ui.HomeTopBar
 import nexus.kekkon.soto.navigation.SotoNavHost
 import nexus.kekkon.soto.navigation.TopLevelDestination
 

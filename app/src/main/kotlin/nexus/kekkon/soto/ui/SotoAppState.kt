@@ -26,8 +26,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import id.synth.soto.feature.home.navigation.HomeDestination
-import id.synth.soto.feature.home.navigation.navigateToHome
+import nexus.kekkon.soto.feature.home.navigation.HomeDestination
+import nexus.kekkon.soto.feature.home.navigation.navigateToHome
 
 @Composable
 fun rememberSotoAppState(
