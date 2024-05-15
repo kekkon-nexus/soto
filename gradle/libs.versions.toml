@@ -1,11 +1,10 @@
 [versions]
 # Plugins
 java = "21"
-kotlin = "2.0.0-RC1"
-ksp = "2.0.0-RC1-1.0.20"
+kotlin = "2.0.0-RC3"
+ksp = "2.0.0-RC3-1.0.20"
 
 android = "8.5.0-beta01"
-compose-compiler = "1.5.13-dev-k2.0.0-RC1-50f08dfa4b4"
 
 dagger = "2.51.1"
 
@@ -77,6 +76,7 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coi
 buildSrc-android = { group = "com.android.tools.build", name = "gradle", version.ref = "android" }
 buildSrc-hilt-android = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "dagger" }
 buildSrc-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+buildSrc-kotlin-plugin-compose = { group = "org.jetbrains.kotlin.plugin.compose", name = "org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
 buildSrc-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 [bundles]
@@ -84,6 +84,7 @@ buildSrc = [
     "buildSrc-android",
     "buildSrc-hilt-android",
     "buildSrc-kotlin",
+    "buildSrc-kotlin-plugin-compose",
     "buildSrc-ksp",
 ]
 
@@ -94,6 +95,7 @@ compose-symbols = [
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-plugin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
