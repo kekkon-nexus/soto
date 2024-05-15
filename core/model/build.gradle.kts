@@ -15,5 +15,5 @@
  */
 
 plugins {
-    id.synth.soto.convention.library
+    nexus.kekkon.soto.convention.library
 }

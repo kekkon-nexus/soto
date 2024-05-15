@@ -15,9 +15,9 @@
  */
 
 plugins {
-    id.synth.soto.convention.android.library
-    id.synth.soto.convention.androidx.compose
-    id.synth.soto.convention.dependencies.androidx.compose.ui.tooling
+    nexus.kekkon.soto.convention.android.library
+    nexus.kekkon.soto.convention.androidx.compose
+    nexus.kekkon.soto.convention.dependencies.androidx.compose.ui.tooling
 }
 
 dependencies {
