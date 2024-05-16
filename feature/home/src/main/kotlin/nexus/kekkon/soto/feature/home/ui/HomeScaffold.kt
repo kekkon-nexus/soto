@@ -16,6 +16,7 @@
 
 package nexus.kekkon.soto.feature.home.ui
 
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -31,9 +32,13 @@ import nexus.kekkon.soto.feature.home.navigation.HomeDestination
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeTopBar(appName: String) {
+fun HomeTopBar(
+    appName: String,
+    actions: @Composable() (RowScope.() -> Unit) = {},
+) {
     TopAppBar(
         title = { Text(appName) },
+        actions = actions,
     )
 }
 

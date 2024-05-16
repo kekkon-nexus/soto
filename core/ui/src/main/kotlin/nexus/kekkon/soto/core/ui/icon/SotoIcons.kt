@@ -24,6 +24,7 @@ import dev.tclement.compose.symbols.outlined.filled.g0.w400.LocalLibrary
 import dev.tclement.compose.symbols.outlined.g0.w400.BrowseGallery
 import dev.tclement.compose.symbols.outlined.g0.w400.LibraryAdd
 import dev.tclement.compose.symbols.outlined.g0.w400.LocalLibrary
+import dev.tclement.compose.symbols.outlined.g0.w400.Settings
 
 /**
  * Soto icons. Material icons are [ImageVector]s.
@@ -35,4 +36,5 @@ object SotoIcons {
     val LibraryFilled = Symbols.Outlined.Grade0.Weight400.Filled.LocalLibrary
     val Recent = Symbols.Outlined.Grade0.Weight400.BrowseGallery
     val RecentFilled = Symbols.Outlined.Grade0.Weight400.Filled.BrowseGallery
+    val Settings = Symbols.Outlined.Grade0.Weight400.Settings
 }

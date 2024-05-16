@@ -30,11 +30,12 @@ import nexus.kekkon.soto.feature.home.recent.navigation.recentScreen
 
 const val ROUTE_HOME = "home"
 
-fun NavController.navigateToHome(destination: HomeDestination, navOptions: NavOptions? = null) {
+fun NavController.navigateToHome(destination: HomeDestination? = null, navOptions: NavOptions? = null) {
     when (destination) {
         HomeDestination.LIBRARY -> navigateToLibrary(navOptions)
         HomeDestination.RECENT -> navigateToRecent(navOptions)
         HomeDestination.BROWSE -> navigateToBrowse(navOptions)
+        null -> this.navigate(ROUTE_HOME, navOptions)
     }
 }
 

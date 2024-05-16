@@ -14,9 +14,25 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.navigation
+package nexus.kekkon.soto.feature.settings.navigation
 
-enum class TopLevelDestination {
-    HOME,
-    SETTINGS,
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
+import androidx.navigation.compose.composable
+import nexus.kekkon.soto.feature.settings.SettingsScreen
+
+const val ROUTE_SETTINGS = "settings"
+
+fun NavController.navigateToSettings(navOptions: NavOptions? = null) {
+    this.navigate(
+        ROUTE_SETTINGS,
+        navOptions,
+    )
+}
+
+fun NavGraphBuilder.settingsScreen() {
+    composable(ROUTE_SETTINGS) {
+        SettingsScreen()
+    }
 }

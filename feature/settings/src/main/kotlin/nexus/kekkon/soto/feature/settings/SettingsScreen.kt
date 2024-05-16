@@ -16,13 +16,26 @@
 
 package nexus.kekkon.soto.feature.settings
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextMotion.Companion.Animated
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun SettingsScreen() {
-    Text(
-        text = stringResource(id = R.string.settings)
-    )
+    val feature = stringResource(id = R.string.settings)
+
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        items(100) { index ->
+            Text(text = "$feature ${index + 1}")
+        }
+    }
 }

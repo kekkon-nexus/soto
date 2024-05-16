@@ -28,6 +28,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import nexus.kekkon.soto.feature.home.navigation.HomeDestination
 import nexus.kekkon.soto.feature.home.navigation.navigateToHome
+import nexus.kekkon.soto.feature.settings.navigation.navigateToSettings
+import nexus.kekkon.soto.navigation.TopLevelDestination
 
 @Composable
 fun rememberSotoAppState(
@@ -47,23 +49,33 @@ class SotoAppState(
     val currentDestination: NavDestination?
         @Composable get() = navController.currentBackStackEntryAsState().value?.destination
 
-    fun navigateToHome(destination: HomeDestination) {
-        trace(destination.toString()) {
-            val navOptions = navOptions {
-                // Pop up to the start destination of the graph to
-                // avoid building up a large stack of destinations
-                // on the back stack as users select items
-                popUpTo(navController.graph.findStartDestination().id) {
-                    saveState = true
-                }
-                // Avoid multiple copies of the same destination when
-                // reselecting the same item
-                launchSingleTop = true
-                // Restore state when reselecting a previously selected item
-                restoreState = true
+    val topLevelNavOption
+        get() = navOptions {
+            // Pop up to the start destination of the graph to
+            // avoid building up a large stack of destinations
+            // on the back stack as users select items
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
             }
+            // Avoid multiple copies of the same destination when
+            // reselecting the same item
+            launchSingleTop = true
+            // Restore state when reselecting a previously selected item
+            restoreState = true
+        }
 
-            navController.navigateToHome(destination, navOptions)
+    fun navigateTo(destination: TopLevelDestination) {
+        trace(destination.toString()) {
+            when (destination) {
+                TopLevelDestination.HOME -> navController.navigateToHome(null, topLevelNavOption)
+                TopLevelDestination.SETTINGS -> navController.navigateToSettings(topLevelNavOption)
+            }
+        }
+    }
+
+    fun navigateTo(destination: HomeDestination) {
+        trace(destination.toString()) {
+            navController.navigateToHome(destination, topLevelNavOption)
         }
     }
 }

@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import nexus.kekkon.soto.feature.home.navigation.ROUTE_HOME
 import nexus.kekkon.soto.feature.home.navigation.homeNavigation
+import nexus.kekkon.soto.feature.settings.navigation.settingsScreen
 import nexus.kekkon.soto.ui.SotoAppState
 
 @Composable
@@ -36,5 +37,6 @@ fun SotoNavHost(
         modifier = modifier,
     ) {
         homeNavigation()
+        settingsScreen()
     }
 }
