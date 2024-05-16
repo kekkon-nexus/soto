@@ -16,12 +16,13 @@ androidx-core = "1.13.1"
 androidx-activity = "1.9.0"
 androidx-hilt = "1.2.0"
 androidx-lifecycle = "2.8.0"
-androidx-navigation = "2.7.7"
+androidx-navigation = "2.8.0-beta01"
 
 androidx-datastore = "1.1.1"
 protobuf = "4.26.1"
 
 kotlinx-coroutines = "1.8.1"
+kotlinx-serialization = "1.6.3"
 
 androidx-compose-bom = "2024.05.00"
 compose-symbols = "1.0.0"
@@ -50,6 +51,7 @@ hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-comp
 
 # KotlinX
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose-bom" }
@@ -77,6 +79,7 @@ buildSrc-android = { group = "com.android.tools.build", name = "gradle", version
 buildSrc-hilt-android = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "dagger" }
 buildSrc-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 buildSrc-kotlin-plugin-compose = { group = "org.jetbrains.kotlin.plugin.compose", name = "org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
+buildSrc-kotlin-plugin-serialization = { group = "org.jetbrains.kotlin.plugin.serialization", name = "org.jetbrains.kotlin.plugin.serialization.gradle.plugin", version.ref = "kotlin" }
 buildSrc-ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 [bundles]
@@ -85,6 +88,7 @@ buildSrc = [
     "buildSrc-hilt-android",
     "buildSrc-kotlin",
     "buildSrc-kotlin-plugin-compose",
+    "buildSrc-kotlin-plugin-serialization",
     "buildSrc-ksp",
 ]
 
@@ -96,6 +100,7 @@ compose-symbols = [
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-plugin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
