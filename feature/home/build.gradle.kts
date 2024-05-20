@@ -18,13 +18,11 @@ plugins {
     nexus.kekkon.soto.convention.presets.feature
 }
 
-android {
-    dependencies {
-        // Projects
-        implementation(projects.core.ui)
+dependencies {
+    // Projects
+    implementation(projects.core.ui)
 
-        implementation(projects.feature.homeBrowse)
-        implementation(projects.feature.homeLibrary)
-        implementation(projects.feature.homeRecent)
-    }
+    implementation(projects.feature.homeBrowse)
+    implementation(projects.feature.homeLibrary)
+    implementation(projects.feature.homeRecent)
 }

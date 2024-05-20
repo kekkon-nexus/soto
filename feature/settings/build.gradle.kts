@@ -18,9 +18,7 @@ plugins {
     nexus.kekkon.soto.convention.presets.feature
 }
 
-android {
-    dependencies {
-        // Projects
-        implementation(projects.core.model)
-    }
+dependencies {
+    // Projects
+    implementation(projects.core.model)
 }
