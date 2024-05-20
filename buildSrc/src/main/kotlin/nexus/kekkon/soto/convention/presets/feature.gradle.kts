@@ -22,6 +22,8 @@ plugins {
     id("nexus.kekkon.soto.convention.android.library")
     id("nexus.kekkon.soto.convention.androidx.compose")
 
+    id("nexus.kekkon.soto.convention.build.kotlin.plugin.serialization")
+
     id("nexus.kekkon.soto.convention.hilt.android")
 
     id("nexus.kekkon.soto.convention.dependencies.android.test")

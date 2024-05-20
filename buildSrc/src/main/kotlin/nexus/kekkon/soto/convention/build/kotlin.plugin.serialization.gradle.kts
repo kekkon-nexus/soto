@@ -14,25 +14,14 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.feature.settings.navigation
+package nexus.kekkon.soto.convention.build
 
-import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavOptions
-import androidx.navigation.compose.composable
-import nexus.kekkon.soto.feature.settings.SettingsScreen
+import nexus.kekkon.soto.convention.build.dsl.libs
 
-const val ROUTE_SETTINGS = "settings"
-
-fun NavController.navigateToSettings(navOptions: NavOptions? = null) {
-    this.navigate(
-        ROUTE_SETTINGS,
-        navOptions,
-    )
+plugins {
+    org.jetbrains.kotlin.plugin.serialization
 }
 
-fun NavGraphBuilder.settingsScreen() {
-    composable(ROUTE_SETTINGS) {
-        SettingsScreen()
-    }
+dependencies {
+    add("implementation", libs.kotlinx.serialization.core)
 }

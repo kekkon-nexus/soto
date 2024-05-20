@@ -19,7 +19,7 @@ package nexus.kekkon.soto.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
-import nexus.kekkon.soto.feature.home.navigation.ROUTE_HOME
+import nexus.kekkon.soto.feature.home.navigation.HomeDestination
 import nexus.kekkon.soto.feature.home.navigation.homeNavigation
 import nexus.kekkon.soto.feature.settings.navigation.settingsScreen
 import nexus.kekkon.soto.ui.SotoAppState
@@ -28,7 +28,7 @@ import nexus.kekkon.soto.ui.SotoAppState
 fun SotoNavHost(
     appState: SotoAppState,
     modifier: Modifier = Modifier,
-    startDestination: String = ROUTE_HOME,
+    startDestination: Any = HomeDestination,
 ) {
     val navController = appState.navController
     NavHost(

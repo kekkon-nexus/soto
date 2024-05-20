@@ -29,6 +29,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import nexus.kekkon.soto.feature.home.navigation.HomeDestination
+import nexus.kekkon.soto.feature.home.navigation.hasRoute
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,14 +45,14 @@ fun HomeTopBar(
 
 @Composable
 fun HomeBottomBar(
-    destinations: List<HomeDestination>,
-    onNavigateTo: (HomeDestination) -> Unit,
+    destinations: List<HomeDestination.Route>,
+    onNavigateTo: (HomeDestination.Route) -> Unit,
     currentDestination: NavDestination?,
     modifier: Modifier = Modifier,
 ) {
     NavigationBar(modifier = modifier) {
         destinations.forEach { destination ->
-            val selected = currentDestination.isInHierarchy(destination)
+            val selected = currentDestination.hasHierarchyRoute(destination)
             NavigationBarItem(
                 selected = selected,
                 onClick = { onNavigateTo(destination) },
@@ -71,7 +72,7 @@ fun HomeBottomBar(
     }
 }
 
-private fun NavDestination?.isInHierarchy(destination: HomeDestination): Boolean =
+private fun NavDestination?.hasHierarchyRoute(route: HomeDestination.Route): Boolean =
     this?.hierarchy?.any {
-        it.route?.contains(destination.name, true) ?: false
+        it.hasRoute(route)
     } ?: false

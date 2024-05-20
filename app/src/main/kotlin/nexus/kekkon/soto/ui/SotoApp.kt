@@ -36,26 +36,26 @@ import nexus.kekkon.soto.feature.home.ui.HomeTopBar
 import nexus.kekkon.soto.feature.settings.R as settingsR
 import nexus.kekkon.soto.navigation.SotoNavHost
 import nexus.kekkon.soto.navigation.TopLevelDestination
+import nexus.kekkon.soto.navigation.hasRoute
 
 @Composable
 fun SotoApp(
     appState: SotoAppState = rememberSotoAppState(),
 ) {
     val currentDestination = appState.currentDestination
+    val topLevelDestination = currentDestination.findTopLevel()
 
     @Composable
     fun navHost() = SotoNavHost(appState)
 
-    val topLevelDestination = currentDestination.asTopLevel()
-
     Scaffold(
         topBar = {
             when (topLevelDestination) {
-                TopLevelDestination.HOME -> HomeTopBar(
+                TopLevelDestination.Route.HOME -> HomeTopBar(
                     appName = stringResource(id = R.string.app_name),
                     actions = {
                         IconButton(
-                            onClick = { appState.navigateTo(TopLevelDestination.SETTINGS) },
+                            onClick = { appState.navigateTo(TopLevelDestination.Route.SETTINGS) },
                         ) {
                             Icon(
                                 imageVector = SotoIcons.Settings,
@@ -70,8 +70,8 @@ fun SotoApp(
         },
         bottomBar = {
             when (topLevelDestination) {
-                TopLevelDestination.HOME -> HomeBottomBar(
-                    destinations = HomeDestination.entries,
+                TopLevelDestination.Route.HOME -> HomeBottomBar(
+                    destinations = HomeDestination.Route.entries,
                     onNavigateTo = appState::navigateTo,
                     currentDestination = currentDestination,
                 )
@@ -91,12 +91,12 @@ fun SotoApp(
     }
 }
 
-private fun NavDestination?.asTopLevel(): TopLevelDestination? =
-    TopLevelDestination.entries.find { destination ->
-        this.isInHierarchy(destination)
+private fun NavDestination?.findTopLevel(): TopLevelDestination.Route? =
+    TopLevelDestination.Route.entries.find { destination ->
+        this.hasHierarchyRoute(destination)
     }
 
-private fun NavDestination?.isInHierarchy(destination: TopLevelDestination): Boolean =
+private fun NavDestination?.hasHierarchyRoute(route: TopLevelDestination.Route): Boolean =
     this?.hierarchy?.any {
-        it.route?.contains(destination.name, true) ?: false
+        it.hasRoute(route)
     } ?: false

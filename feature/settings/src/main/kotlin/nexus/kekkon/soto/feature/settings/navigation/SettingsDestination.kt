@@ -14,25 +14,27 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.feature.home.library.navigation
+package nexus.kekkon.soto.feature.settings.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import nexus.kekkon.soto.feature.home.library.LibraryScreen
+import kotlinx.serialization.Serializable
+import nexus.kekkon.soto.feature.settings.SettingsScreen
 
-const val ROUTE_LIBRARY = "library"
+@Serializable
+data object SettingsDestination
 
-fun NavController.navigateToLibrary(navOptions: NavOptions? = null) {
+fun NavController.navigateToSettings(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_LIBRARY,
-        navOptions
+        SettingsDestination,
+        navOptions,
     )
 }
 
-fun NavGraphBuilder.libraryScreen() {
-    composable(ROUTE_LIBRARY) {
-        LibraryScreen()
+fun NavGraphBuilder.settingsScreen() {
+    composable<SettingsDestination> {
+        SettingsScreen()
     }
 }
