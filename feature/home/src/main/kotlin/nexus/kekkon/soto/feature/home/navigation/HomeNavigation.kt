@@ -28,12 +28,18 @@ import nexus.kekkon.soto.feature.home.library.navigation.navigateToLibrary
 import nexus.kekkon.soto.feature.home.recent.navigation.navigateToRecent
 import nexus.kekkon.soto.feature.home.recent.navigation.recentScreen
 
-fun NavController.navigateToHome(destination: HomeDestination.Route? = null, navOptions: NavOptions? = null) {
-    when (destination) {
+fun NavController.navigateToHome(navOptions: NavOptions? = null) {
+    this.navigate(
+        HomeDestination,
+        navOptions
+    )
+}
+
+fun NavController.navigateTo(route: HomeDestination.Route, navOptions: NavOptions? = null) {
+    when (route) {
         HomeDestination.Route.LIBRARY -> navigateToLibrary(navOptions)
         HomeDestination.Route.RECENT -> navigateToRecent(navOptions)
         HomeDestination.Route.BROWSE -> navigateToBrowse(navOptions)
-        null -> this.navigate(HomeDestination, navOptions)
     }
 }
 

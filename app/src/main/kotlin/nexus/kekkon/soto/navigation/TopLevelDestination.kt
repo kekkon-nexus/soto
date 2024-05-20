@@ -16,7 +16,9 @@
 
 package nexus.kekkon.soto.navigation
 
-enum class TopLevelDestination {
-    HOME,
-    SETTINGS,
+data object TopLevelDestination {
+    enum class Route {
+        HOME,
+        SETTINGS,
+    }
 }

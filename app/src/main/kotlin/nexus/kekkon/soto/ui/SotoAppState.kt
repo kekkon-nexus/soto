@@ -27,6 +27,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import nexus.kekkon.soto.feature.home.navigation.HomeDestination
+import nexus.kekkon.soto.feature.home.navigation.navigateTo
 import nexus.kekkon.soto.feature.home.navigation.navigateToHome
 import nexus.kekkon.soto.feature.settings.navigation.navigateToSettings
 import nexus.kekkon.soto.navigation.TopLevelDestination
@@ -64,18 +65,18 @@ class SotoAppState(
             restoreState = true
         }
 
-    fun navigateTo(destination: TopLevelDestination) {
+    fun navigateTo(destination: TopLevelDestination.Route) {
         trace(destination.toString()) {
             when (destination) {
-                TopLevelDestination.HOME -> navController.navigateToHome(null, topLevelNavOption)
-                TopLevelDestination.SETTINGS -> navController.navigateToSettings(topLevelNavOption)
+                TopLevelDestination.Route.HOME -> navController.navigateToHome(topLevelNavOption)
+                TopLevelDestination.Route.SETTINGS -> navController.navigateToSettings(topLevelNavOption)
             }
         }
     }
 
     fun navigateTo(destination: HomeDestination.Route) {
         trace(destination.toString()) {
-            navController.navigateToHome(destination, topLevelNavOption)
+            navController.navigateTo(destination, topLevelNavOption)
         }
     }
 }

@@ -51,11 +51,11 @@ fun SotoApp(
     Scaffold(
         topBar = {
             when (topLevelDestination) {
-                TopLevelDestination.HOME -> HomeTopBar(
+                TopLevelDestination.Route.HOME -> HomeTopBar(
                     appName = stringResource(id = R.string.app_name),
                     actions = {
                         IconButton(
-                            onClick = { appState.navigateTo(TopLevelDestination.SETTINGS) },
+                            onClick = { appState.navigateTo(TopLevelDestination.Route.SETTINGS) },
                         ) {
                             Icon(
                                 imageVector = SotoIcons.Settings,
@@ -70,7 +70,7 @@ fun SotoApp(
         },
         bottomBar = {
             when (topLevelDestination) {
-                TopLevelDestination.HOME -> HomeBottomBar(
+                TopLevelDestination.Route.HOME -> HomeBottomBar(
                     destinations = HomeDestination.Route.entries,
                     onNavigateTo = appState::navigateTo,
                     currentDestination = currentDestination,
@@ -91,12 +91,12 @@ fun SotoApp(
     }
 }
 
-private fun NavDestination?.asTopLevel(): TopLevelDestination? =
-    TopLevelDestination.entries.find { destination ->
+private fun NavDestination?.asTopLevel(): TopLevelDestination.Route? =
+    TopLevelDestination.Route.entries.find { destination ->
         this.isInHierarchy(destination)
     }
 
-private fun NavDestination?.isInHierarchy(destination: TopLevelDestination): Boolean =
+private fun NavDestination?.isInHierarchy(destination: TopLevelDestination.Route): Boolean =
     this?.hierarchy?.any {
         it.route?.contains(destination.name, true) ?: false
     } ?: false
