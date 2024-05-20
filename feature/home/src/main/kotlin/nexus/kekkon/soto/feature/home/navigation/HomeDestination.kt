@@ -18,8 +18,13 @@ package nexus.kekkon.soto.feature.home.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import kotlinx.serialization.Serializable
 import nexus.kekkon.soto.core.ui.icon.SotoIcons
+import nexus.kekkon.soto.feature.home.browse.navigation.BrowseDestination
+import nexus.kekkon.soto.feature.home.library.navigation.LibraryDestination
+import nexus.kekkon.soto.feature.home.recent.navigation.RecentDestination
 import nexus.kekkon.soto.feature.home.browse.R as browseR
 import nexus.kekkon.soto.feature.home.library.R as libraryR
 import nexus.kekkon.soto.feature.home.recent.R as recentR
@@ -46,5 +51,13 @@ data object HomeDestination {
             iconSelected = SotoIcons.BrowseFilled,
             textId = browseR.string.browse,
         ),
+    }
+}
+
+fun NavDestination.hasRoute(route: HomeDestination.Route): Boolean {
+    return when(route) {
+        HomeDestination.Route.LIBRARY -> this.hasRoute<LibraryDestination>()
+        HomeDestination.Route.RECENT -> this.hasRoute<RecentDestination>()
+        HomeDestination.Route.BROWSE -> this.hasRoute<BrowseDestination>()
     }
 }

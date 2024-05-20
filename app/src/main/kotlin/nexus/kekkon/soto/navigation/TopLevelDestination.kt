@@ -16,9 +16,21 @@
 
 package nexus.kekkon.soto.navigation
 
+import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
+import nexus.kekkon.soto.feature.home.navigation.HomeDestination
+import nexus.kekkon.soto.feature.settings.navigation.SettingsDestination
+
 data object TopLevelDestination {
     enum class Route {
         HOME,
         SETTINGS,
+    }
+}
+
+fun NavDestination.hasRoute(route: TopLevelDestination.Route): Boolean {
+    return when (route) {
+        TopLevelDestination.Route.HOME -> this.hasRoute<HomeDestination>()
+        TopLevelDestination.Route.SETTINGS -> this.hasRoute<SettingsDestination>()
     }
 }
