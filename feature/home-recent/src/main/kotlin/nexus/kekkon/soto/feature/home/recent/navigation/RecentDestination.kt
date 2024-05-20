@@ -14,25 +14,29 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.feature.home.browse.navigation
+package nexus.kekkon.soto.feature.home.recent.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import nexus.kekkon.soto.feature.home.browse.BrowseScreen
+import kotlinx.serialization.Serializable
+import nexus.kekkon.soto.feature.home.recent.RecentScreen
 
-const val ROUTE_BROWSE = "browse"
+const val ROUTE_RECENT = "recent"
 
-fun NavController.navigateToBrowse(navOptions: NavOptions? = null) {
+@Serializable
+data object RecentDestination
+
+fun NavController.navigateToRecent(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_BROWSE,
+        ROUTE_RECENT,
         navOptions
     )
 }
 
-fun NavGraphBuilder.browseScreen() {
-    composable(ROUTE_BROWSE) {
-        BrowseScreen()
+fun NavGraphBuilder.recentScreen() {
+    composable(ROUTE_RECENT) {
+        RecentScreen()
     }
 }

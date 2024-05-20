@@ -14,25 +14,29 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.feature.home.recent.navigation
+package nexus.kekkon.soto.feature.home.library.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import nexus.kekkon.soto.feature.home.recent.RecentScreen
+import kotlinx.serialization.Serializable
+import nexus.kekkon.soto.feature.home.library.LibraryScreen
 
-const val ROUTE_RECENT = "recent"
+const val ROUTE_LIBRARY = "library"
 
-fun NavController.navigateToRecent(navOptions: NavOptions? = null) {
+@Serializable
+data object LibraryDestination
+
+fun NavController.navigateToLibrary(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_RECENT,
+        ROUTE_LIBRARY,
         navOptions
     )
 }
 
-fun NavGraphBuilder.recentScreen() {
-    composable(ROUTE_RECENT) {
-        RecentScreen()
+fun NavGraphBuilder.libraryScreen() {
+    composable(ROUTE_LIBRARY) {
+        LibraryScreen()
     }
 }

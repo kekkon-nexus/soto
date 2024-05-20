@@ -14,25 +14,29 @@
  * limitations under the License.
  */
 
-package nexus.kekkon.soto.feature.settings.navigation
+package nexus.kekkon.soto.feature.home.browse.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import nexus.kekkon.soto.feature.settings.SettingsScreen
+import kotlinx.serialization.Serializable
+import nexus.kekkon.soto.feature.home.browse.BrowseScreen
 
-const val ROUTE_SETTINGS = "settings"
+const val ROUTE_BROWSE = "browse"
 
-fun NavController.navigateToSettings(navOptions: NavOptions? = null) {
+@Serializable
+data object BrowseDestination
+
+fun NavController.navigateToBrowse(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_SETTINGS,
-        navOptions,
+        ROUTE_BROWSE,
+        navOptions
     )
 }
 
-fun NavGraphBuilder.settingsScreen() {
-    composable(ROUTE_SETTINGS) {
-        SettingsScreen()
+fun NavGraphBuilder.browseScreen() {
+    composable(ROUTE_BROWSE) {
+        BrowseScreen()
     }
 }
