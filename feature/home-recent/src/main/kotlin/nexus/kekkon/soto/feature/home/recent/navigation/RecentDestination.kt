@@ -23,20 +23,18 @@ import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 import nexus.kekkon.soto.feature.home.recent.RecentScreen
 
-const val ROUTE_RECENT = "recent"
-
 @Serializable
 data object RecentDestination
 
 fun NavController.navigateToRecent(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_RECENT,
+        RecentDestination,
         navOptions
     )
 }
 
 fun NavGraphBuilder.recentScreen() {
-    composable(ROUTE_RECENT) {
+    composable<RecentDestination> {
         RecentScreen()
     }
 }

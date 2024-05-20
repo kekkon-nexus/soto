@@ -73,7 +73,7 @@ class SotoAppState(
         }
     }
 
-    fun navigateTo(destination: HomeDestination) {
+    fun navigateTo(destination: HomeDestination.Route) {
         trace(destination.toString()) {
             navController.navigateToHome(destination, topLevelNavOption)
         }

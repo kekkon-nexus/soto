@@ -23,20 +23,18 @@ import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 import nexus.kekkon.soto.feature.home.library.LibraryScreen
 
-const val ROUTE_LIBRARY = "library"
-
 @Serializable
 data object LibraryDestination
 
 fun NavController.navigateToLibrary(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_LIBRARY,
+        LibraryDestination,
         navOptions
     )
 }
 
 fun NavGraphBuilder.libraryScreen() {
-    composable(ROUTE_LIBRARY) {
+    composable<LibraryDestination> {
         LibraryScreen()
     }
 }

@@ -71,7 +71,7 @@ fun SotoApp(
         bottomBar = {
             when (topLevelDestination) {
                 TopLevelDestination.HOME -> HomeBottomBar(
-                    destinations = HomeDestination.entries,
+                    destinations = HomeDestination.Route.entries,
                     onNavigateTo = appState::navigateTo,
                     currentDestination = currentDestination,
                 )

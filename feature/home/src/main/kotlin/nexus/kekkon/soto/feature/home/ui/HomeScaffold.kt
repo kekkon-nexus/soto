@@ -44,8 +44,8 @@ fun HomeTopBar(
 
 @Composable
 fun HomeBottomBar(
-    destinations: List<HomeDestination>,
-    onNavigateTo: (HomeDestination) -> Unit,
+    destinations: List<HomeDestination.Route>,
+    onNavigateTo: (HomeDestination.Route) -> Unit,
     currentDestination: NavDestination?,
     modifier: Modifier = Modifier,
 ) {
@@ -71,7 +71,7 @@ fun HomeBottomBar(
     }
 }
 
-private fun NavDestination?.isInHierarchy(destination: HomeDestination): Boolean =
+private fun NavDestination?.isInHierarchy(destination: HomeDestination.Route): Boolean =
     this?.hierarchy?.any {
         it.route?.contains(destination.name, true) ?: false
     } ?: false

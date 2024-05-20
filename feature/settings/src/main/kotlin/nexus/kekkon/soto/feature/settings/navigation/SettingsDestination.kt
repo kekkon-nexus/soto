@@ -23,20 +23,18 @@ import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 import nexus.kekkon.soto.feature.settings.SettingsScreen
 
-const val ROUTE_SETTINGS = "settings"
-
 @Serializable
 data object SettingsDestination
 
 fun NavController.navigateToSettings(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_SETTINGS,
+        SettingsDestination,
         navOptions,
     )
 }
 
 fun NavGraphBuilder.settingsScreen() {
-    composable(ROUTE_SETTINGS) {
+    composable<SettingsDestination> {
         SettingsScreen()
     }
 }

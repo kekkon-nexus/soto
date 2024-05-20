@@ -22,25 +22,23 @@ import androidx.navigation.NavOptions
 import androidx.navigation.navigation
 import nexus.kekkon.soto.feature.home.browse.navigation.browseScreen
 import nexus.kekkon.soto.feature.home.browse.navigation.navigateToBrowse
-import nexus.kekkon.soto.feature.home.library.navigation.ROUTE_LIBRARY
+import nexus.kekkon.soto.feature.home.library.navigation.LibraryDestination
 import nexus.kekkon.soto.feature.home.library.navigation.libraryScreen
 import nexus.kekkon.soto.feature.home.library.navigation.navigateToLibrary
 import nexus.kekkon.soto.feature.home.recent.navigation.navigateToRecent
 import nexus.kekkon.soto.feature.home.recent.navigation.recentScreen
 
-const val ROUTE_HOME = "home"
-
-fun NavController.navigateToHome(destination: HomeDestination? = null, navOptions: NavOptions? = null) {
+fun NavController.navigateToHome(destination: HomeDestination.Route? = null, navOptions: NavOptions? = null) {
     when (destination) {
-        HomeDestination.LIBRARY -> navigateToLibrary(navOptions)
-        HomeDestination.RECENT -> navigateToRecent(navOptions)
-        HomeDestination.BROWSE -> navigateToBrowse(navOptions)
-        null -> this.navigate(ROUTE_HOME, navOptions)
+        HomeDestination.Route.LIBRARY -> navigateToLibrary(navOptions)
+        HomeDestination.Route.RECENT -> navigateToRecent(navOptions)
+        HomeDestination.Route.BROWSE -> navigateToBrowse(navOptions)
+        null -> this.navigate(HomeDestination, navOptions)
     }
 }
 
 fun NavGraphBuilder.homeNavigation() {
-    navigation(startDestination = ROUTE_LIBRARY, route = ROUTE_HOME) {
+    navigation<HomeDestination>(startDestination = LibraryDestination) {
         libraryScreen()
         recentScreen()
         browseScreen()

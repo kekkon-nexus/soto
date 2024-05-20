@@ -23,20 +23,18 @@ import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 import nexus.kekkon.soto.feature.home.browse.BrowseScreen
 
-const val ROUTE_BROWSE = "browse"
-
 @Serializable
 data object BrowseDestination
 
 fun NavController.navigateToBrowse(navOptions: NavOptions? = null) {
     this.navigate(
-        ROUTE_BROWSE,
+        BrowseDestination,
         navOptions
     )
 }
 
 fun NavGraphBuilder.browseScreen() {
-    composable(ROUTE_BROWSE) {
+    composable<BrowseDestination> {
         BrowseScreen()
     }
 }
