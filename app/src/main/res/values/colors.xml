@@ -16,6 +16,8 @@
   -->
 
 <resources>
-    <color name="ic_launcher_background">#EEC170</color>
-    <color name="ic_launcher_foreground">#585123</color>
+    <!-- P-90 -->
+    <color name="ic_launcher_background">#ffddb5</color>
+    <!-- NV-30 -->
+    <color name="ic_launcher_foreground">#4f4539</color>
 </resources>
