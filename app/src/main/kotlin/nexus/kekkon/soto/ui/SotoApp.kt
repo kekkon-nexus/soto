@@ -45,9 +45,6 @@ fun SotoApp(
     val currentDestination = appState.currentDestination
     val topLevelDestination = currentDestination.findTopLevel()
 
-    @Composable
-    fun navHost() = SotoNavHost(appState)
-
     Scaffold(
         topBar = {
             when (topLevelDestination) {
@@ -86,7 +83,7 @@ fun SotoApp(
                 .padding(innerPadding)
                 .consumeWindowInsets(innerPadding),
         ) {
-            navHost()
+            SotoNavHost(appState)
         }
     }
 }
