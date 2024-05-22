@@ -56,13 +56,14 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
 
-        mavenGithub(url = "https://maven.pkg.github.com/tclement0922/material-symbols-compose")
+        mavenGitHub(user = "tclement0922", repository = "material-symbols-compose")
     }
 }
 
-fun RepositoryHandler.mavenGithub(
-    url: Any,
-) = maven(url) {
+fun RepositoryHandler.mavenGitHub(
+    user: String,
+    repository: String,
+) = maven("https://maven.pkg.github.com/$user/$repository") {
     credentials {
         username = "yvvki"
         password = "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"
