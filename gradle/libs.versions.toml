@@ -4,7 +4,7 @@ java = "21"
 kotlin = "2.0.0"
 ksp = "2.0.0-1.0.21"
 
-android = "8.6.0-alpha02"
+android = "8.6.0-alpha03"
 
 dagger = "2.51.1"
 
