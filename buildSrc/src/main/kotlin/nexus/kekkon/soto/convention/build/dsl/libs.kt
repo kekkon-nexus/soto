@@ -18,8 +18,8 @@ package nexus.kekkon.soto.convention.build.dsl
 
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.the
 
 // TODEL https://github.com/gradle/gradle/issues/15383
 internal val Project.libs: LibrariesForLibs
-    get() = this.extensions.getByType()
+    get() = the()
