@@ -275,8 +275,11 @@ fun SotoTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = SotoTypography,
-        content = content,
-    )
+    ) {
+        SotoIconParameters(
+            content = content,
+        )
+    }
 }
 
 @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S)

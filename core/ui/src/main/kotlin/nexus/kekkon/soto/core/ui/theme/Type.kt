@@ -16,6 +16,26 @@
 
 package nexus.kekkon.soto.core.ui.theme
 
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocal
+import androidx.compose.ui.graphics.Color
+import dev.tclement.fonticons.IconFont
+import dev.tclement.fonticons.ProvideIconParameters
+import dev.tclement.fonticons.symbols.outlined.rememberOutlinedMaterialSymbolsFont
 
 val SotoTypography = Typography()
+
+@Composable
+fun SotoIconParameters(
+    iconFont: IconFont = rememberOutlinedMaterialSymbolsFont(),
+    tintProvider: CompositionLocal<Color> = LocalContentColor,
+    content: @Composable () -> Unit,
+) {
+    ProvideIconParameters(
+        iconFont = iconFont,
+        tintProvider = tintProvider,
+        content = content,
+    )
+}
