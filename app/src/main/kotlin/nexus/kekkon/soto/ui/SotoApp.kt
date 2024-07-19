@@ -20,7 +20,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -29,11 +28,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import nexus.kekkon.soto.R
-import nexus.kekkon.soto.core.ui.icon.SotoIcons
+import nexus.kekkon.soto.core.ui.icon.SotoFontIcons
 import nexus.kekkon.soto.feature.home.navigation.HomeDestination
 import nexus.kekkon.soto.feature.home.ui.HomeBottomBar
 import nexus.kekkon.soto.feature.home.ui.HomeTopBar
-import nexus.kekkon.soto.feature.settings.R as settingsR
 import nexus.kekkon.soto.navigation.SotoNavHost
 import nexus.kekkon.soto.navigation.TopLevelDestination
 import nexus.kekkon.soto.navigation.hasRoute
@@ -54,10 +52,7 @@ fun SotoApp(
                         IconButton(
                             onClick = { appState.navigateTo(TopLevelDestination.Route.SETTINGS) },
                         ) {
-                            Icon(
-                                imageVector = SotoIcons.Settings,
-                                contentDescription = stringResource(id = settingsR.string.settings),
-                            )
+                            SotoFontIcons.Settings()
                         }
                     },
                 )

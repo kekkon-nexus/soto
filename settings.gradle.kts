@@ -70,6 +70,7 @@ dependencyResolutionManagement {
         mavenCentral()
 
         mavenGitHub(user = "tclement0922", repository = "material-symbols-compose")
+        mavenGitHub(user = "tclement0922", repository = "compose-font-icons")
     }
 }
 

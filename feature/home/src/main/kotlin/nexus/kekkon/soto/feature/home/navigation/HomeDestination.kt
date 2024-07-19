@@ -17,11 +17,11 @@
 package nexus.kekkon.soto.feature.home.navigation
 
 import androidx.annotation.StringRes
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import kotlinx.serialization.Serializable
-import nexus.kekkon.soto.core.ui.icon.SotoIcons
+import nexus.kekkon.soto.core.ui.icon.SotoFontIcons
 import nexus.kekkon.soto.feature.home.browse.navigation.BrowseDestination
 import nexus.kekkon.soto.feature.home.library.navigation.LibraryDestination
 import nexus.kekkon.soto.feature.home.recent.navigation.RecentDestination
@@ -32,23 +32,23 @@ import nexus.kekkon.soto.feature.home.recent.R as recentR
 @Serializable
 data object HomeDestination {
     enum class Route(
-        val iconUnselected: ImageVector,
-        val iconSelected: ImageVector,
+        val iconUnselected: @Composable () -> Unit,
+        val iconSelected: @Composable () -> Unit,
         @StringRes val textId: Int,
     ) {
         LIBRARY(
-            iconUnselected = SotoIcons.Library,
-            iconSelected = SotoIcons.LibraryFilled,
+            iconUnselected = { SotoFontIcons.Library() },
+            iconSelected = { SotoFontIcons.LibraryFill() },
             textId = libraryR.string.library,
         ),
         RECENT(
-            iconUnselected = SotoIcons.Recent,
-            iconSelected = SotoIcons.RecentFilled,
+            iconUnselected = { SotoFontIcons.Recent() },
+            iconSelected = { SotoFontIcons.RecentFill() },
             textId = recentR.string.recent,
         ),
         BROWSE(
-            iconUnselected = SotoIcons.Browse,
-            iconSelected = SotoIcons.BrowseFilled,
+            iconUnselected = { SotoFontIcons.Browse() },
+            iconSelected = { SotoFontIcons.BrowseFill() },
             textId = browseR.string.browse,
         ),
     }

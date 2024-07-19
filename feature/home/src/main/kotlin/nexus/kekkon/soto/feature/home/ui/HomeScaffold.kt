@@ -57,14 +57,8 @@ fun HomeBottomBar(
                 selected = selected,
                 onClick = { onNavigateTo(destination) },
                 icon = {
-                    if (selected) Icon(
-                        imageVector = destination.iconSelected,
-                        contentDescription = null,
-                    )
-                    else Icon(
-                        imageVector = destination.iconUnselected,
-                        contentDescription = null,
-                    )
+                    if (selected) destination.iconSelected()
+                    else destination.iconUnselected()
                 },
                 label = { Text(stringResource(destination.textId)) },
             )
