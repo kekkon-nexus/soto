@@ -26,6 +26,7 @@ kotlinx-serialization = "1.7.1"
 
 androidx-compose-bom = "2024.06.00"
 compose-symbols = "1.0.0"
+fonticons = "1.2.1"
 coil = "2.7.0"
 
 junit = "4.13.2"
@@ -72,6 +73,10 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coi
 
 compose-symbols-core = { group = "dev.tclement.compose.symbols", name = "core", version.ref = "compose-symbols" }
 compose-symbols-outlined-g0-w400 = { group = "dev.tclement.compose.symbols", name = "outlined-g0-w400", version.ref = "compose-symbols" }
+fonticons-core = { group = "dev.tclement.fonticons", name = "core", version.ref = "fonticons" }
+fonticons-core-glance = { group = "dev.tclement.fonticons", name = "core-glance", version.ref = "fonticons" }
+fonticons-font-symbols = { group = "dev.tclement.fonticons", name = "font-symbols", version.ref = "fonticons" }
+fonticons-font-symbols-outline = { group = "dev.tclement.fonticons", name = "font-symbols-outlined", version.ref = "fonticons" }
 
 # buildSrc dependencies
 buildSrc-android = { group = "com.android.tools.build", name = "gradle", version.ref = "android" }
@@ -94,6 +99,12 @@ buildSrc = [
 compose-symbols = [
     "compose-symbols-core",
     "compose-symbols-outlined-g0-w400",
+]
+fonticons = [
+    "fonticons-core",
+    "fonticons-core-glance",
+    "fonticons-font-symbols",
+    "fonticons-font-symbols-outline",
 ]
 
 [plugins]
