@@ -22,6 +22,5 @@ plugins {
 
 dependencies {
     // Compose integrations
-    api(libs.bundles.compose.symbols)
     api(libs.bundles.fonticons)
 }

@@ -25,7 +25,6 @@ kotlinx-coroutines = "1.8.1"
 kotlinx-serialization = "1.7.1"
 
 androidx-compose-bom = "2024.06.00"
-compose-symbols = "1.0.0"
 fonticons = "1.2.1"
 coil = "2.7.0"
 
@@ -71,8 +70,6 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 # Compose extensions
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 
-compose-symbols-core = { group = "dev.tclement.compose.symbols", name = "core", version.ref = "compose-symbols" }
-compose-symbols-outlined-g0-w400 = { group = "dev.tclement.compose.symbols", name = "outlined-g0-w400", version.ref = "compose-symbols" }
 fonticons-core = { group = "dev.tclement.fonticons", name = "core", version.ref = "fonticons" }
 fonticons-core-glance = { group = "dev.tclement.fonticons", name = "core-glance", version.ref = "fonticons" }
 fonticons-font-symbols = { group = "dev.tclement.fonticons", name = "font-symbols", version.ref = "fonticons" }
@@ -96,10 +93,6 @@ buildSrc = [
     "buildSrc-ksp",
 ]
 
-compose-symbols = [
-    "compose-symbols-core",
-    "compose-symbols-outlined-g0-w400",
-]
 fonticons = [
     "fonticons-core",
     "fonticons-core-glance",

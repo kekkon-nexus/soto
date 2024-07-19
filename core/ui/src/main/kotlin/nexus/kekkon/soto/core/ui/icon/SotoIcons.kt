@@ -16,17 +16,8 @@
 
 package nexus.kekkon.soto.core.ui.icon
 
-import android.provider.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
-import dev.tclement.compose.symbols.Symbols
-import dev.tclement.compose.symbols.outlined.filled.g0.w400.BrowseGallery
-import dev.tclement.compose.symbols.outlined.filled.g0.w400.LibraryAdd
-import dev.tclement.compose.symbols.outlined.filled.g0.w400.LocalLibrary
-import dev.tclement.compose.symbols.outlined.g0.w400.BrowseGallery
-import dev.tclement.compose.symbols.outlined.g0.w400.LibraryAdd
-import dev.tclement.compose.symbols.outlined.g0.w400.LocalLibrary
-import dev.tclement.compose.symbols.outlined.g0.w400.Settings
 import dev.tclement.fonticons.FontIcon
 import dev.tclement.fonticons.symbols.BrowseGallery
 import dev.tclement.fonticons.symbols.LibraryAdd
@@ -38,15 +29,6 @@ import dev.tclement.fonticons.symbols.outlined.rememberOutlinedMaterialSymbolsFo
 /**
  * Soto icons. Material icons are [ImageVector]s.
  */
-object SotoIcons {
-    val Browse = Symbols.Outlined.Grade0.Weight400.LibraryAdd
-    val BrowseFilled = Symbols.Outlined.Grade0.Weight400.Filled.LibraryAdd
-    val Library = Symbols.Outlined.Grade0.Weight400.LocalLibrary
-    val LibraryFilled = Symbols.Outlined.Grade0.Weight400.Filled.LocalLibrary
-    val Recent = Symbols.Outlined.Grade0.Weight400.BrowseGallery
-    val RecentFilled = Symbols.Outlined.Grade0.Weight400.Filled.BrowseGallery
-    val Settings = Symbols.Outlined.Grade0.Weight400.Settings
-}
 
 object SotoFontIcons {
     @Composable
