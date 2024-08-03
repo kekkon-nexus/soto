@@ -2,7 +2,7 @@
 # Plugins
 java = "21"
 kotlin = "2.0.0"
-ksp = "2.0.0-1.0.23"
+ksp = "2.0.0-1.0.24"
 
 android = "8.7.0-alpha01"
 
