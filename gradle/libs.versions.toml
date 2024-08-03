@@ -19,7 +19,7 @@ androidx-lifecycle = "2.8.4"
 androidx-navigation = "2.8.0-beta06"
 
 androidx-datastore = "1.1.1"
-protobuf = "4.27.2"
+protobuf = "4.27.3"
 
 kotlinx-coroutines = "1.8.1"
 kotlinx-serialization = "1.7.1"
